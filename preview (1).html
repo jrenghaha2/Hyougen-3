@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latihan Soal Bahasa Jepang – Daily Life & Keigo</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink: #111827;
+  --paper: #f9fafb;
+  --white: #ffffff;
+  --border: #e5e7eb;
+  --border-dark: #d1d5db;
+  --muted: #6b7280;
+  --accent: #1d4ed8;
+  --accent-light: #eff6ff;
+  --correct: #15803d;
+  --correct-bg: #f0fdf4;
+  --correct-border: #86efac;
+  --wrong: #b91c1c;
+  --wrong-bg: #fef2f2;
+  --wrong-border: #fca5a5;
+  --gold: #b45309;
+  --gold-bg: #fffbeb;
+  --gold-border: #fcd34d;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* FURIGANA */
+ruby { display: inline-flex; flex-direction: column-reverse; align-items: center; line-height: 1; vertical-align: bottom; }
+ruby rt { font-size: 0.55em; line-height: 1.2; color: #374151; text-align: center; font-family: 'Noto Sans JP', sans-serif; font-style: normal; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-bottom: 100px;
+}
+
+/* HEADER */
+.site-header {
+  background: var(--ink);
+  color: #fff;
+  padding: 32px 40px 28px;
+}
+.site-header .eyebrow {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+.site-header h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(20px, 3.5vw, 30px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+}
+.site-header .subtitle {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* IDENTITY */
+.identity-bar {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 14px 40px;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.id-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.id-field label { font-weight: 600; white-space: nowrap; }
+.id-field input {
+  border: none;
+  border-bottom: 1.5px solid var(--border-dark);
+  background: transparent;
+  padding: 3px 6px;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+  width: 160px;
+  outline: none;
+}
+.id-field input:focus { border-bottom-color: var(--accent); }
+
+/* SECTION HEADER */
+.section-header {
+  padding: 28px 40px 0;
+}
+.section-tag {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+.section-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.section-instruction {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* QUIZ GRID */
+.quiz-grid {
+  padding: 20px 40px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 16px;
+}
+
+/* CARD */
+.q-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s;
+}
+.q-card.state-correct { border-color: var(--correct-border); }
+.q-card.state-wrong   { border-color: var(--wrong-border); }
+
+.q-card-head {
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border);
+  padding: 12px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.q-num {
+  background: var(--ink);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 26px; height: 26px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.q-dialog {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
+  line-height: 1.75;
+  flex: 1;
+}
+.q-dialog .spk { font-weight: 700; color: #9a3412; font-size: 12px; }
+.blank { color: var(--accent); font-weight: 700; border-bottom: 2px dashed var(--accent); padding: 0 3px; }
+
+/* OPTIONS */
+.q-options {
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+  background: var(--paper);
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  user-select: none;
+}
+.opt:hover { background: #eff6ff; border-color: #bfdbfe; }
+.opt input { display: none; }
+.opt-badge {
+  min-width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--border-dark);
+  color: #374151;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: background 0.12s, color 0.12s;
+}
+.opt.sel { background: var(--accent-light); border-color: #93c5fd; }
+.opt.sel .opt-badge { background: var(--accent); color: #fff; }
+.opt.res-correct { background: var(--correct-bg); border-color: var(--correct-border); }
+.opt.res-correct .opt-badge { background: var(--correct); color: #fff; }
+.opt.res-wrong { background: var(--wrong-bg); border-color: var(--wrong-border); }
+.opt.res-wrong .opt-badge { background: var(--wrong); color: #fff; }
+
+/* FEEDBACK — hidden until submitted */
+.q-feedback {
+  display: none;
+  padding: 10px 14px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12.5px;
+  line-height: 1.6;
+  border-top: 1px solid var(--border);
+}
+.q-feedback.visible { display: block; }
+.q-feedback.fb-correct { background: var(--correct-bg); color: #166534; }
+.q-feedback.fb-wrong   { background: var(--wrong-bg);   color: #991b1b; }
+.q-feedback .fb-label  { font-weight: 700; margin-bottom: 2px; }
+
+/* STICKY BAR */
+.sticky-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--ink);
+  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  z-index: 50;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+}
+.bar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.bar-progress-text {
+  font-size: 13px;
+  color: #9ca3af;
+}
+.bar-progress-text span { color: #fff; font-weight: 700; font-size: 16px; }
+.bar-pbar {
+  width: 110px; height: 4px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.bar-pbar-fill {
+  height: 100%;
+  background: #60a5fa;
+  border-radius: 2px;
+  transition: width 0.25s;
+  width: 0%;
+}
+.bar-right { display: flex; gap: 8px; align-items: center; }
+.btn {
+  padding: 9px 20px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s, opacity 0.15s;
+}
+.btn-primary { background: #2563eb; color: #fff; }
+.btn-primary:hover { background: #1d4ed8; }
+.btn-ghost {
+  background: transparent;
+  color: #9ca3af;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+.btn-pdf {
+  background: var(--gold);
+  color: #fff;
+  display: none;
+}
+.btn-pdf:hover { background: #92400e; }
+.btn-pdf.visible { display: inline-flex; align-items: center; gap: 6px; }
+
+/* SCORE OVERLAY */
+#overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 100;
+  align-items: center; justify-content: center;
+  backdrop-filter: blur(3px);
+}
+#overlay.open { display: flex; }
+.score-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 44px 52px;
+  max-width: 440px;
+  width: 92%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  animation: popIn 0.28s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes popIn { from{transform:scale(0.8);opacity:0} to{transform:scale(1);opacity:1} }
+.modal-kana {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.modal-score {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+}
+.modal-denom { font-size: 14px; color: var(--muted); margin-top: 6px; }
+.modal-pct {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.modal-grade { margin-top: 8px; font-size: 15px; font-weight: 700; }
+.modal-actions {
+  margin-top: 28px;
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+}
+.modal-actions .btn { padding: 11px 22px; }
+.btn-modal-close { background: var(--ink); color: #fff; }
+.btn-modal-pdf { background: var(--gold); color: #fff; }
+.btn-modal-pdf:hover { background: #92400e; }
+
+/* PRINT / PDF STYLES */
+@media print {
+  body { background: #fff; padding-bottom: 0; font-size: 12px; }
+  .site-header { background: #fff !important; color: var(--ink) !important; padding: 20px; border-bottom: 2px solid #000; }
+  .site-header .eyebrow { color: #000 !important; }
+  .site-header h1 { color: #000 !important; font-size: 20px !important; }
+  .site-header .subtitle { color: #555 !important; }
+  .identity-bar { padding: 12px 20px; }
+  .sticky-bar, #overlay, .btn-pdf, .btn-ghost, .btn-primary { display: none !important; }
+  .section-header { padding: 20px 20px 0; }
+  .quiz-grid { padding: 14px 20px 0; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .q-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .q-card-head { background: #f4f4f4 !important; }
+  .opt { padding: 5px 8px; }
+  /* Show feedback in print */
+  .q-feedback.visible { display: block !important; }
+  /* Result summary at top of print */
+  .print-result-banner { display: block !important; }
+}
+.print-result-banner {
+  display: none;
+  background: #f0f9ff;
+  border: 2px solid #38bdf8;
+  border-radius: 8px;
+  margin: 16px 40px;
+  padding: 14px 20px;
+  font-size: 14px;
+}
+.print-result-banner strong { font-size: 18px; }
+
+@media (max-width: 600px) {
+  .site-header, .identity-bar, .section-header, .quiz-grid { padding-left: 16px; padding-right: 16px; }
+  .quiz-grid { grid-template-columns: 1fr; }
+  .sticky-bar { padding: 10px 16px; }
+  .bar-pbar { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="eyebrow">Latihan Bahasa Jepang · 50 Soal</div>
+  <h1>Daily Life &amp; Shopping · Keigo, Advice &amp; Permissions</h1>
+  <p class="subtitle">Pilih jawaban paling tepat untuk setiap percakapan</p>
+</header>
+
+<div class="identity-bar">
+  <div class="id-field">
+    <label><ruby>名前<rt>なまえ</rt></ruby>:</label>
+    <input type="text" id="nama" placeholder="Nama lengkap">
+  </div>
+  <div class="id-field">
+    <label>日付:</label>
+    <input type="text" id="tanggal" placeholder="Tanggal">
+  </div>
+</div>
+
+<!-- Print result banner (only visible when printing) -->
+<div class="print-result-banner" id="print-banner"></div>
+
+<!-- SECTION 1 -->
+<div class="section-header">
+  <div class="section-tag">Bagian 1 · Soal 1–25</div>
+  <div class="section-title">Daily Life &amp; Shopping</div>
+  <div class="section-instruction"><ruby>指示<rt>しじ</rt></ruby>：<ruby>最<rt>もっと</rt></ruby>も<ruby>適切<rt>てきせつ</rt></ruby>な<ruby>答<rt>こた</rt></ruby>えを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>びなさい。</div>
+</div>
+<div class="quiz-grid" id="grid-1"></div>
+
+<!-- SECTION 2 -->
+<div class="section-header" style="margin-top:32px;">
+  <div class="section-tag">Bagian 2 · Soal 26–50</div>
+  <div class="section-title">Keigo, Advice &amp; Permissions</div>
+  <div class="section-instruction"><ruby>次<rt>つぎ</rt></ruby>の<ruby>会話<rt>かいわ</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んで、（　　）に<ruby>最<rt>もっと</rt></ruby>もよいものを A, B, C, D から<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>びなさい。</div>
+</div>
+<div class="quiz-grid" id="grid-2"></div>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <div class="bar-left">
+    <div class="bar-progress-text">Dijawab: <span id="ans-count">0</span> / 50</div>
+    <div class="bar-pbar"><div class="bar-pbar-fill" id="pbar"></div></div>
+  </div>
+  <div class="bar-right">
+    <button class="btn btn-ghost" onclick="resetAll()">Reset</button>
+    <button class="btn btn-pdf" id="btn-pdf-bar" onclick="downloadPDF()">⬇ Unduh PDF</button>
+    <button class="btn btn-primary" id="btn-submit" onclick="submitAll()">Submit &amp; Koreksi ✓</button>
+  </div>
+</div>
+
+<!-- SCORE OVERLAY -->
+<div id="overlay">
+  <div class="score-modal">
+    <div class="modal-kana">結果 · HASIL AKHIR</div>
+    <div class="modal-score" id="m-score">0</div>
+    <div class="modal-denom" id="m-denom">dari 50 soal</div>
+    <div class="modal-pct" id="m-pct"></div>
+    <div class="modal-grade" id="m-grade"></div>
+    <div class="modal-actions">
+      <button class="btn btn-modal-close" onclick="closeOverlay()">Lihat Koreksi</button>
+      <button class="btn btn-modal-pdf" onclick="downloadPDF()">⬇ Unduh PDF</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── QUESTIONS DATA ───────────────────────────────────────────────────────────
+const QUESTIONS = [
+  // ── BAGIAN 1: Daily Life & Shopping (1–25) ──
+  {
+    id: 1,
+    dialog: [
+      {s:'A', t:'すみません、このりんごはいくらですか。'},
+      {s:'B', t:'それは<ruby>一<rt>ひと</rt></ruby>つ150円です。'},
+      {s:'A', t:'じゃあ、三つください。'},
+      {s:'B', t:'はい、ありがとうございます。<ruby>全部<rt>ぜんぶ</rt></ruby>で【BLANK】です。'}
+    ],
+    opts: ['300円','450円','600円','150円'],
+    ans: 1,
+    feedback: '150 yen × 3 buah = 450 yen. Jawaban yang benar adalah B「450円」. Untuk soal hitungan, pastikan kamu menghitung dengan teliti sebelum menjawab.'
+  },
+  {
+    id: 2,
+    dialog: [
+      {s:'A', t:'いらっしゃいませ。何かお探しですか。'},
+      {s:'B', t:'はい、白いシャツを探しているんですが。'},
+      {s:'A', t:'【BLANK】。こちらはいかがでしょうか。'},
+      {s:'B', t:'いいですね。試着してもいいですか。'}
+    ],
+    opts: ['かしこまりました','お願いします','わかりません','ごめんなさい'],
+    ans: 0,
+    feedback: '「かしこまりました」adalah ekspresi sopan yang digunakan pelayan toko saat menerima permintaan pelanggan. Tingkatannya lebih formal dari「わかりました」dan sering dipakai dalam situasi pelayanan.'
+  },
+  {
+    id: 3,
+    dialog: [
+      {s:'A', t:'田中さん、<ruby>毎朝<rt>まいあさ</rt></ruby>何時に起きますか。'},
+      {s:'B', t:'だいたい6時に起きます。'},
+      {s:'A', t:'早いですね。起きてから何をしますか。'},
+      {s:'B', t:'【BLANK】、コーヒーを飲みます。'}
+    ],
+    opts: ['シャワーを浴びてから','寝てから','<ruby>会社<rt>かいしゃ</rt></ruby>へ行ってから','晩ご飯を食べてから'],
+    ans: 0,
+    feedback: 'Kebiasaan yang paling natural setelah bangun tidur adalah「シャワーを浴びてから（setelah mandi）」. Pilihan B「寝てから」tidak masuk akal, sedangkan C dan D tidak sesuai dengan waktu pagi hari.'
+  },
+  {
+    id: 4,
+    dialog: [
+      {s:'A', t:'この靴、ちょっと小さいですね。'},
+      {s:'B', t:'そうですか。【BLANK】。'},
+      {s:'A', t:'はい、お願いします。あ、これはちょうどいいです。'},
+      {s:'B', t:'よかったです。'}
+    ],
+    opts: ['もっと小さいのはありますか','もっと大きいのはありますか','それをください','高いですね'],
+    ans: 1,
+    feedback: 'Karena A mengatakan「小さい（kecil）」, maka yang dibutuhkan selanjutnya adalah ukuran yang lebih besar. Pilihan B「もっと大きいのはありますか（apakah ada yang lebih besar?）」adalah alur percakapan yang tepat.'
+  },
+  {
+    id: 5,
+    dialog: [
+      {s:'A', t:'すみません、この<ruby>近<rt>ちか</rt></ruby>くに<ruby>銀行<rt>ぎんこう</rt></ruby>がありますか。'},
+      {s:'B', t:'はい、あそこのコンビニの<ruby>隣<rt>となり</rt></ruby>にありますよ。'},
+      {s:'A', t:'【BLANK】。'},
+      {s:'B', t:'いいえ、どういたしまして。'}
+    ],
+    opts: ['<ruby>失礼<rt>しつれい</rt></ruby>します','助かりました。ありがとうございます','お疲れ様でした','お願いします'],
+    ans: 1,
+    feedback: 'B menjawab「どういたしまして（sama-sama）」, sehingga yang paling natural sebagai respons sebelumnya adalah ucapan terima kasih. Pilihan「助かりました。ありがとうございます（sangat membantu. Terima kasih）」adalah yang paling tepat.'
+  },
+  {
+    id: 6,
+    dialog: [
+      {s:'A', t:'<ruby>日曜日<rt>にちようび</rt></ruby>、どこかへ行きましたか。'},
+      {s:'B', t:'いいえ、どこへも行きませんでした。'},
+      {s:'A', t:'そうですか。【BLANK】。'},
+      {s:'B', t:'<ruby>掃除<rt>そうじ</rt></ruby>をしたり、本を読んだりしました。'}
+    ],
+    opts: ['何をしましたか','誰と行きましたか','いつ行きましたか','忙しかったですか'],
+    ans: 0,
+    feedback: 'B menjawab「<ruby>掃除<rt>そうじ</rt></ruby>や<ruby>読書<rt>どくしょ</rt></ruby>（bersih-bersih dan membaca buku）」, sehingga A pasti menanyakan「何をしましたか（melakukan apa?）」. Pilihan B dan C tidak tepat karena mengasumsikan B pergi ke suatu tempat.'
+  },
+  {
+    id: 7,
+    dialog: [
+      {s:'A', t:'このカバン、とても軽いですね。'},
+      {s:'B', t:'ええ、【BLANK】で作られていますから。'},
+      {s:'A', t:'へえ、<ruby>丈夫<rt>じょうぶ</rt></ruby>そうですね。これにします。'}
+    ],
+    opts: ['重い材料','特別な布','安い紙','鉄'],
+    ans: 1,
+    feedback: 'Penilaian「軽い（ringan）」dan「<ruby>丈夫<rt>じょうぶ</rt></ruby>そう（tampak kuat）」cocok dengan bahan「特別な布（kain khusus）」. Besi atau bahan berat tidak akan membuat tas terasa ringan. Kertas murah pun tidak terkesan kuat.'
+  },
+  {
+    id: 8,
+    dialog: [
+      {s:'A', t:'すみません、この<ruby>料理<rt>りょうり</rt></ruby>は辛いですか。'},
+      {s:'B', t:'いいえ、全然【BLANK】ですよ。'},
+      {s:'A', t:'よかったです。辛いのは苦手なんです。'}
+    ],
+    opts: ['辛くない','<ruby>甘<rt>あま</rt></ruby>くない','おいしくない','辛い'],
+    ans: 0,
+    feedback: 'Karena dimulai dengan「いいえ（tidak）」dan ingin menyampaikan bahwa makanan tidak pedas, maka「辛くない（tidak pedas）」adalah jawaban yang benar. Pola「全然＋bentuk negatif」berarti "sama sekali tidak ~".'
+  },
+  {
+    id: 9,
+    dialog: [
+      {s:'A', t:'【BLANK】。'},
+      {s:'B', t:'ええ、いいですよ。何ですか。'},
+      {s:'A', t:'この<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>を教えてくれませんか。'},
+      {s:'B', t:'それは「きゅうけい」と読みますよ。'}
+    ],
+    opts: ['ちょっと手伝ってください','ちょっと伺いたいんですが','さようなら','お元気ですか'],
+    ans: 1,
+    feedback: 'B menjawab「ええ、いいですよ（ya, boleh）」memberi izin, lalu A melanjutkan dengan pertanyaan. Maka kalimat pertama A adalah「ちょっと伺いたいんですが（boleh saya bertanya sebentar?）」yang paling natural sebagai pembuka percakapan.'
+  },
+  {
+    id: 10,
+    dialog: [
+      {s:'A', t:'お<ruby>支払<rt>しはら</rt></ruby>いはカードですか、<ruby>現金<rt>げんきん</rt></ruby>ですか。'},
+      {s:'B', t:'【BLANK】。'},
+      {s:'A', t:'かしこまりました。では、こちらにサインをお願いします。'}
+    ],
+    opts: ['カードでお願いします','<ruby>現金<rt>げんきん</rt></ruby>は<ruby>持<rt>も</rt></ruby>っていません','お釣りはいりません','高すぎます'],
+    ans: 0,
+    feedback: 'Kasir meminta tanda tangan, yang berarti pembayaran dengan kartu kredit. Jawaban「カードでお願いします（tolong dengan kartu）」adalah yang paling tepat. Alur tanda tangan hanya terjadi saat memilih metode pembayaran kartu.'
+  },
+  {
+    id: 11,
+    dialog: [
+      {s:'A', t:'明日、一緒に<ruby>買<rt>か</rt></ruby>い<ruby>物<rt>もの</rt></ruby>に行きませんか。'},
+      {s:'B', t:'明日はちょっと【BLANK】。'},
+      {s:'A', t:'そうですか。じゃあ、<ruby>来週<rt>らいしゅう</rt></ruby>はどうですか。'},
+      {s:'B', t:'<ruby>来週<rt>らいしゅう</rt></ruby>なら大丈夫です。'}
+    ],
+    opts: ['暇です','<ruby>都合<rt>つごう</rt></ruby>が悪いです','楽しみです','行きたいです'],
+    ans: 1,
+    feedback: 'A menawarkan alternatif「<ruby>来週<rt>らいしゅう</rt></ruby>はどうですか（bagaimana minggu depan?）」, yang berarti B tidak bisa besok. Jawaban「<ruby>都合<rt>つごう</rt></ruby>が悪いです（jadwalnya tidak cocok）」adalah yang paling tepat.'
+  },
+  {
+    id: 12,
+    dialog: [
+      {s:'A', t:'このスカート、色がいいですね。'},
+      {s:'B', t:'ありがとうございます。でも、ちょっと【BLANK】。'},
+      {s:'A', t:'そうですか。もっと長いのもありますよ。'},
+      {s:'B', t:'じゃあ、それを見せてください。'}
+    ],
+    opts: ['短いです','長いです','太いです','狭いです'],
+    ans: 0,
+    feedback: 'A menyarankan「もっと長いのもありますよ（ada yang lebih panjang juga）」, sehingga bisa disimpulkan B merasa roknya「短いです（terlalu pendek）」. Ini adalah jawaban yang benar.'
+  },
+  {
+    id: 13,
+    dialog: [
+      {s:'A', t:'<ruby>仕事<rt>しごと</rt></ruby>はどうですか。'},
+      {s:'B', t:'<ruby>最<rt>もっと</rt></ruby>近、とても忙しいです。'},
+      {s:'A', t:'【BLANK】。'},
+      {s:'B', t:'ええ、毎日<ruby>残業<rt>ざんぎょう</rt></ruby>しています。'}
+    ],
+    opts: ['大変ですね','暇ですね','楽しみですね','おめでとうございます'],
+    ans: 0,
+    feedback: 'Sebagai bentuk empati terhadap situasi「忙しい（sibuk）」dan「毎日<ruby>残業<rt>ざんぎょう</rt></ruby>（lembur setiap hari）」, ungkapan「大変ですね（wah, berat ya）」adalah aizuchi (respons empati) yang paling natural.'
+  },
+  {
+    id: 14,
+    dialog: [
+      {s:'A', t:'すみません、【BLANK】はどこですか。'},
+      {s:'B', t:'あちらの<ruby>階段<rt>かいだん</rt></ruby>の<ruby>横<rt>よこ</rt></ruby>にあります。'},
+      {s:'A', t:'ありがとうございます。行ってみます。'}
+    ],
+    opts: ['<ruby>試着室<rt>しちゃくしつ</rt></ruby>','駐車場','<ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>','窓'],
+    ans: 0,
+    feedback: 'Karena sedang berbelanja dan mengatakan「行ってみます（akan saya coba datangi）」, tempat yang paling natural ditanyakan adalah「試着室（kamar pas）」. Lemari es dan jendela bukan tempat yang wajar ditanyakan lokasinya.'
+  },
+  {
+    id: 15,
+    dialog: [
+      {s:'A', t:'佐藤さん、いつもどこで服を買いますか。'},
+      {s:'B', t:'私はよくデパートで買います。'},
+      {s:'A', t:'デパートは【BLANK】。'},
+      {s:'B', t:'ええ、でも<ruby>質<rt>しつ</rt></ruby>がいいですよ。'}
+    ],
+    opts: ['安いですね','高いですね','遠いですね','狭いですね'],
+    ans: 1,
+    feedback: 'B merespons dengan「でも質がいい（tapi kualitasnya bagus）」yang bersifat membela diri, sehingga A pasti menyebutkan kelemahan (harga). Jawaban「高いですね（mahal ya）」adalah yang paling tepat.'
+  },
+  {
+    id: 16,
+    dialog: [
+      {s:'A', t:'お弁当、温めますか。'},
+      {s:'B', t:'はい、【BLANK】。'},
+      {s:'A', t:'かしこまりました。少々お待ちください。'}
+    ],
+    opts: ['お願いします','結構です','食べません','捨ててください'],
+    ans: 0,
+    feedback: 'Setelah menjawab「はい（ya）」, B meminta untuk dipanaskan sehingga「お願いします（tolong）」adalah jawaban yang benar.「結構です」adalah cara menolak dengan sopan, jadi biasanya digunakan setelah「いいえ（tidak）」.'
+  },
+  {
+    id: 17,
+    dialog: [
+      {s:'A', t:'すみません、このペン、【BLANK】。'},
+      {s:'B', t:'はい、どうぞ。使ってください。'},
+      {s:'A', t:'ありがとうございます。すぐ返します。'}
+    ],
+    opts: ['買ってもいいですか','借りてもいいですか','捨ててもいいですか','見せてもいいですか'],
+    ans: 1,
+    feedback: 'Dari kalimat「すぐ返します（akan segera dikembalikan）」, bisa diketahui bahwa A ingin meminjam pena sebentar. Oleh karena itu,「借りてもいいですか（boleh saya pinjam?）」adalah jawaban yang paling tepat.'
+  },
+  {
+    id: 18,
+    dialog: [
+      {s:'A', t:'<ruby>昨日<rt>きのう</rt></ruby>のパーティーはどうでしたか。'},
+      {s:'B', t:'とても【BLANK】ですよ。'},
+      {s:'A', t:'そうですか。私も行きたかったです。'},
+      {s:'B', t:'次は一緒に行きましょう。'}
+    ],
+    opts: ['静かだった','<ruby>賑やか<rt>にぎやか</rt></ruby>だった','つまらなかった','寒かった'],
+    ans: 1,
+    feedback: 'A mengatakan「私も行きたかった（aku juga ingin pergi）」dengan nada menyesal, sehingga pesta tersebut pasti menyenangkan.「賑やかだった（ramai / meriah）」adalah jawaban yang benar.'
+  },
+  {
+    id: 19,
+    dialog: [
+      {s:'A', t:'【BLANK】。'},
+      {s:'B', t:'いらっしゃいませ。<ruby>何名様<rt>なんめいさま</rt></ruby>ですか。'},
+      {s:'A', t:'二人です。'},
+      {s:'B', t:'では、こちらの席へどうぞ。'}
+    ],
+    opts: ['ごめんください','お<ruby>邪魔<rt>じゃま</rt></ruby>します','こんにちは','<ruby>失礼<rt>しつれい</rt></ruby>します'],
+    ans: 0,
+    feedback: 'Salam yang paling tepat saat memasuki restoran dan disambut dengan「いらっしゃいませ（selamat datang）」adalah「ごめんください（permisi / excuse me）」. Ini adalah ucapan yang digunakan saat memasuki suatu tempat.'
+  },
+  {
+    id: 20,
+    dialog: [
+      {s:'A', t:'このカメラ、<ruby>使<rt>つか</rt></ruby>い<ruby>方<rt>かた</rt></ruby>がよくわかりません。'},
+      {s:'B', t:'【BLANK】。'},
+      {s:'A', t:'<ruby>本当<rt>ほんとう</rt></ruby>ですか。助かります。お願いします。'}
+    ],
+    opts: ['私が教えましょうか','<ruby>難<rt>むずか</rt></ruby>しいですね','捨てましょうか','買いましょうか'],
+    ans: 0,
+    feedback: 'A merespons dengan「助かります、お願いします（sangat membantu, tolong）」sebagai ungkapan terima kasih, sehingga B pasti menawarkan bantuan. Jawaban「私が教えましょうか（boleh saya ajari?）」adalah yang benar.'
+  },
+  {
+    id: 21,
+    dialog: [
+      {s:'A', t:'<ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>に<ruby>牛乳<rt>ぎゅうにゅう</rt></ruby>がありますか。'},
+      {s:'B', t:'あ、【BLANK】。'},
+      {s:'A', t:'じゃあ、<ruby>買<rt>か</rt></ruby>い<ruby>物<rt>もの</rt></ruby>に行くときに買ってきますね。'},
+      {s:'B', t:'お願いします。'}
+    ],
+    opts: ['たくさんありますよ','もうありません','冷たいですよ','白いですよ'],
+    ans: 1,
+    feedback: 'A mengatakan「買ってきます（akan saya belikan）」, yang berarti susunya sudah habis. Jawaban「もうありません（sudah tidak ada）」adalah yang benar.'
+  },
+  {
+    id: 22,
+    dialog: [
+      {s:'A', t:'すみません、レジ<ruby>袋<rt>ぶくろ</rt></ruby>は<ruby>必要<rt>ひつよう</rt></ruby>ですか。'},
+      {s:'B', t:'いいえ、【BLANK】。'},
+      {s:'A', t:'わかりました。では、このままお渡しします。'}
+    ],
+    opts: ['お願いします','結構です','あります','ください'],
+    ans: 1,
+    feedback: 'Karena dimulai dengan「いいえ（tidak）」yang menolak kantong plastik, maka「結構です（tidak perlu / tidak usah）」adalah jawaban yang tepat.「お願いします」dan「ください」adalah ungkapan setuju/meminta, bukan menolak.'
+  },
+  {
+    id: 23,
+    dialog: [
+      {s:'A', t:'田中さん、<ruby>趣味<rt>しゅみ</rt></ruby>は何ですか。'},
+      {s:'B', t:'【BLANK】。'},
+      {s:'A', t:'へえ、どんな<ruby>料理<rt>りょうり</rt></ruby>を作りますか。'},
+      {s:'B', t:'<ruby>日本<ruby>料理<rt>りょうり</rt></ruby><rt>にほんりょうり</rt></ruby>が多いですね。'}
+    ],
+    opts: ['<ruby>料理<rt>りょうり</rt></ruby>を作ることです','食べることです','寝ることです','走ることです'],
+    ans: 0,
+    feedback: 'A menanyakan「どんな<ruby>料理<rt>りょうり</rt></ruby>を作りますか（masakan apa yang kamu buat?）」, sehingga hobi B adalah「<ruby>料理<rt>りょうり</rt></ruby>を作ること（memasak）」. Jika hobinya「食べること（makan）」, maka A seharusnya bertanya「どんな<ruby>料理<rt>りょうり</rt></ruby>が好きですか」.'
+  },
+  {
+    id: 24,
+    dialog: [
+      {s:'A', t:'あ、雨が降ってきましたよ。'},
+      {s:'B', t:'<ruby>本当<rt>ほんとう</rt></ruby>ですね。【BLANK】。'},
+      {s:'A', t:'ええ、そうしましょう。タクシーを呼びますね。'}
+    ],
+    opts: ['<ruby>急<rt>いそ</rt></ruby>いで帰りましょう','<ruby>散歩<rt>さんぽ</rt></ruby>しましょう','傘を捨てましょう','遊びましょう'],
+    ans: 0,
+    feedback: 'A mengatakan「タクシーを呼びます（akan memanggil taksi）」, menunjukkan mereka terburu-buru untuk pulang. Jawaban「<ruby>急<rt>いそ</rt></ruby>いで帰りましょう（ayo cepat pulang）」adalah yang paling tepat.'
+  },
+  {
+    id: 25,
+    dialog: [
+      {s:'A', t:'このパソコン、【BLANK】。'},
+      {s:'B', t:'ええ、<ruby>最新<rt>さいしん</rt></ruby>のモデルですから。'},
+      {s:'A', t:'そうですか。でも、ちょっと高すぎますね。'}
+    ],
+    opts: ['<ruby>便利<rt>べんり</rt></ruby>そうですね','古そうですね','重そうですね','悪そうですね'],
+    ans: 0,
+    feedback: 'B menjelaskan bahwa laptop ini adalah「<ruby>最新<rt>さいしん</rt></ruby>モデル（model terbaru）」dan A menganggapnya「高い（mahal）」, sehingga penilaian A terhadap laptop seharusnya positif. Jawaban「<ruby>便利<rt>べんり</rt></ruby>そうですね（tampaknya praktis ya）」adalah yang benar.'
+  },
+  // ── BAGIAN 2: Keigo, Advice & Permissions (26–50) ──
+  {
+    id: 26,
+    dialog: [
+      {s:'田中', t:'<ruby>先生<rt>せんせい</rt></ruby>、<ruby>昨日<rt>きのう</rt></ruby>お<ruby>電話<rt>でんわ</rt></ruby>しましたが、いらっしゃいませんでした。'},
+      {s:'<ruby>先生<rt>せんせい</rt></ruby>', t:'ああ、<ruby>昨日<rt>きのう</rt></ruby>は<ruby>午後<rt>ごご</rt></ruby>から<ruby>出張<rt>しゅっちょう</rt></ruby>で、<ruby>大学<rt>だいがく</rt></ruby>には【BLANK】。'},
+      {s:'田中', t:'そうだったんですか。<ruby>失礼<rt>しつれい</rt></ruby>いたしました。'}
+    ],
+    opts: ['おりませんでした','いらっしゃいませんでした','まいりませんでした','おいでになりませんでした'],
+    ans: 0,
+    feedback: 'Karena sensei sedang berbicara tentang dirinya sendiri, maka harus menggunakan bentuk rendah diri (kenjōgo)「おる」dalam bentuk negatif「おりませんでした（tidak ada）」. 「いらっしゃいません」dan「おいでになりません」adalah bentuk hormat (sonkeigo) yang tidak boleh digunakan untuk diri sendiri.'
+  },
+  {
+    id: 27,
+    dialog: [
+      {s:'客', t:'すみません、このパンフレットを【BLANK】か。'},
+      {s:'店員', t:'はい、どうぞ。ご<ruby>自由<rt>じゆう</rt></ruby>にお持ちください。'},
+      {s:'客', t:'ありがとうございます。<ruby>友達<rt>ともだち</rt></ruby>の<ruby>分<rt>ぶん</rt></ruby>ももらってもいいですか。'}
+    ],
+    opts: ['いただいてもよろしいです','もらってもよろしいです','いただいてもいいですか','<ruby>頂戴<rt>ちょうだい</rt></ruby>してもよろしいです'],
+    ans: 2,
+    feedback: 'Karena meminta izin, harus menggunakan bentuk tanya. Jawaban「いただいてもいいですか（boleh saya ambil?）」adalah yang benar.「いただく」adalah bentuk rendah diri dari「もらう」yang tepat digunakan kepada pelayan toko. Pilihan lain tidak berbentuk kalimat tanya sehingga tidak bisa digunakan untuk meminta izin.'
+  },
+  {
+    id: 28,
+    dialog: [
+      {s:'<ruby>後輩<rt>こうはい</rt></ruby>', t:'<ruby>先輩<rt>せんぱい</rt></ruby>、<ruby>最<rt>もっと</rt></ruby>近あまり眠れないんです。どうすればいいでしょうか。'},
+      {s:'<ruby>先輩<rt>せんぱい</rt></ruby>', t:'あまり<ruby>無理<rt>むり</rt></ruby>を【BLANK】。<ruby>今日<rt>きょう</rt></ruby>は早く<ruby>帰<rt>かえ</rt></ruby>って<ruby>休<rt>やす</rt></ruby>んだほうがいいですよ。'},
+      {s:'<ruby>後輩<rt>こうはい</rt></ruby>', t:'わかりました。そうします。'}
+    ],
+    opts: ['しないほうがいいですよ','したほうがいいですよ','しなければなりません','してもいいですよ'],
+    ans: 0,
+    feedback: 'Karena menyarankan untuk tidak memaksakan diri (<ruby>無理<rt>むり</rt></ruby>をしない), jawaban「しないほうがいいですよ（sebaiknya tidak melakukan itu）」adalah yang benar. Jika memakai「したほうがいい」, artinya justru menyarankan untuk memaksakan diri, yang merupakan kebalikan dari konteks.'
+  },
+  {
+    id: 29,
+    dialog: [
+      {s:'社員', t:'<ruby>部長<rt>ぶちょう</rt></ruby>、明日の<ruby>会議<rt>かいぎ</rt></ruby>の<ruby>資料<rt>しりょう</rt></ruby>を【BLANK】か。'},
+      {s:'<ruby>部長<rt>ぶちょう</rt></ruby>', t:'ええ、見せてください。よくできていますね。'},
+      {s:'社員', t:'ありがとうございます。安心しました。'}
+    ],
+    opts: ['ご覧になります','お<ruby>目<rt>め</rt></ruby>にかけます','お見せします','<ruby>拝見<rt>はいけん</rt></ruby>します'],
+    ans: 1,
+    feedback: 'Karena karyawan menunjukkan dokumen kepada atasan (<ruby>部長<rt>ぶちょう</rt></ruby>), harus menggunakan kenjōgo (bentuk rendah diri) untuk tindakan "memperlihatkan".「お目にかける（memperlihatkan dengan hormat）」adalah jawaban yang benar dan paling sopan.「ご覧になる」adalah sonkeigo (bentuk hormat) untuk saat atasan yang melihat.「お見せする」juga bisa, tapi「お目にかける」lebih formal.「拝見する」digunakan saat diri sendiri yang "melihat".'
+  },
+  {
+    id: 30,
+    dialog: [
+      {s:'学生', t:'<ruby>先生<rt>せんせい</rt></ruby>、この<ruby>辞書<rt>じしょ</rt></ruby>を明日まで【BLANK】か。'},
+      {s:'<ruby>先生<rt>せんせい</rt></ruby>', t:'いいですよ。でも、明日の<ruby>授業<rt>じゅぎょう</rt></ruby>で使うから忘れないでね。'},
+      {s:'学生', t:'はい、必ず<ruby>持<rt>も</rt></ruby>ってきます。'}
+    ],
+    opts: ['借りてもいいです','お借りしてもよろしいです','貸してもよろしいです','<ruby>拝借<rt>はいしゃく</rt></ruby>してもよろしいです'],
+    ans: 1,
+    feedback: 'Karena murid meminta izin kepada guru, diperlukan ekspresi sopan.「お借りしてもよろしいですか（boleh saya pinjam?）」adalah yang paling tepat dan standar.「貸してもよろしいですか」salah karena「貸す」berarti "meminjamkan (kepada orang lain)", bukan "meminjam". Subjeknya terbalik.'
+  },
+  {
+    id: 31,
+    dialog: [
+      {s:'店員', t:'いらっしゃいませ。<ruby>何名様<rt>なんめいさま</rt></ruby>でしょうか。'},
+      {s:'客', t:'二人です。静かな席に【BLANK】か。'},
+      {s:'店員', t:'はい、<ruby>奥<rt>おく</rt></ruby>の<ruby>窓側<rt>まどがわ</rt></ruby>の席が<ruby>空<rt>あ</rt></ruby>いております。どうぞ。'}
+    ],
+    opts: ['座ってもいいです','お座りになってもいいです','座らせていただいてもよろしいです','座ってはいけません'],
+    ans: 2,
+    feedback: 'Pelanggan meminta izin kepada pelayan dengan sopan untuk duduk.「座らせていただいてもよろしいですか（boleh saya duduk di sini?）」adalah yang paling sopan dan tepat.「お座りになる」adalah sonkeigo (bentuk hormat untuk orang lain), tidak boleh digunakan untuk tindakan diri sendiri.'
+  },
+  {
+    id: 32,
+    dialog: [
+      {s:'母', t:'<ruby>風邪<rt>かぜ</rt></ruby>をひいたみたいね。<ruby>熱<rt>ねつ</rt></ruby>があるんじゃない？'},
+      {s:'子', t:'うん、ちょっと<ruby>頭<rt>あたま</rt></ruby>が痛いんだ。'},
+      {s:'母', t:'じゃあ、<ruby>今日<rt>きょう</rt></ruby>はお風呂に【BLANK】。すぐ寝なさい。'}
+    ],
+    opts: ['入ったほうがいいわよ','入らないほうがいいわよ','入らなくてもいいわよ','入ってもいいわよ'],
+    ans: 1,
+    feedback: 'Saat sakit dan demam, mandi justru tidak disarankan. Oleh karena itu「入らないほうがいいわよ（sebaiknya tidak mandi）」adalah jawaban yang benar. Hal ini juga konsisten dengan kalimat berikutnya「すぐ寝なさい（langsung tidur）」.'
+  },
+  {
+    id: 33,
+    dialog: [
+      {s:'<ruby>受付<rt>うけつけ</rt></ruby>', t:'お<ruby>名前<rt>なまえ</rt></ruby>を【BLANK】か。'},
+      {s:'客', t:'田中と申します。3時に<ruby>予約<rt>よやく</rt></ruby>しております。'},
+      {s:'<ruby>受付<rt>うけつけ</rt></ruby>', t:'田中様ですね。お待ちしておりました。'}
+    ],
+    opts: ['おっしゃっていただけます','<ruby>伺<rt>うかが</rt></ruby>ってもよろしいです','おっしゃいます','お聞きしてもよろしいです'],
+    ans: 3,
+    feedback: 'Petugas resepsionis (pihak sendiri) menanyakan nama kepada tamu, sehingga harus menggunakan kenjōgo (bentuk rendah diri) untuk tindakan "bertanya".「お聞きしてもよろしいですか（boleh saya tanyakan?）」adalah yang benar.「おっしゃる」adalah sonkeigo untuk saat lawan bicara yang berbicara, bukan untuk diri sendiri.'
+  },
+  {
+    id: 34,
+    dialog: [
+      {s:'友人A', t:'日本語のスピーチ、自信がないんだ。'},
+      {s:'友人B', t:'<ruby>練習<rt>れんしゅう</rt></ruby>のとき、<ruby>先生<rt>せんせい</rt></ruby>に一度【BLANK】ほうがいいよ。'},
+      {s:'友人A', t:'そうだね。明日お願いしてみるよ。'}
+    ],
+    opts: ['見ていただいた','見てさしあげた','見てくれた','見せた'],
+    ans: 0,
+    feedback: 'Karena meminta guru (目上/orang yang lebih tinggi) untuk melihat/menilai pidato, harus menggunakan kenjōgo「見ていただく（minta tolong diperhatikan dengan hormat）」. Jawaban yang benar adalah「見ていただいた（bentuk ~た）」.「見てさしあげる」berarti diri sendiri yang melakukan sesuatu untuk orang lain, maknanya terbalik.'
+  },
+  {
+    id: 35,
+    dialog: [
+      {s:'課長', t:'佐藤さん、明日のパーティーには【BLANK】か。'},
+      {s:'佐藤', t:'はい、<ruby>伺<rt>うかが</rt></ruby>うつもりです。楽しみにしております。'},
+      {s:'課長', t:'それはよかったです。では、<ruby>会場<rt>かいじょう</rt></ruby>で会いましょう。'}
+    ],
+    opts: ['まいります','いらっしゃいます','おいでします','伺います'],
+    ans: 3,
+    feedback: 'Dalam percakapan ini,<ruby>課長<rt>かちょう</rt></ruby> (kepala divisi) menanyakan apakah Satou akan datang ke pesta. Karena Satou adalah bawahan, <ruby>課長<rt>かちょう</rt></ruby> menggunakan sonkeigo (bentuk hormat) untuk menanyakan tindakan Satou.「いらっしゃいますか（apakah Anda akan hadir?）」adalah pilihan yang paling tepat dari opsi yang tersedia. Satou sendiri kemudian merespons dengan「伺うつもりです」menggunakan kenjōgo.'
+  },
+  {
+    id: 36,
+    dialog: [
+      {s:'学生', t:'<ruby>先生<rt>せんせい</rt></ruby>、この<ruby>文法<rt>ぶんぽう</rt></ruby>がよくわからないのですが、【BLANK】か。'},
+      {s:'<ruby>先生<rt>せんせい</rt></ruby>', t:'ええ、いいですよ。どこがわかりませんか。'},
+      {s:'学生', t:'この「ことになっている」の<ruby>使<rt>つか</rt></ruby>い<ruby>方<rt>かた</rt></ruby>が<ruby>難<rt>むずか</rt></ruby>しいです。'}
+    ],
+    opts: ['教えていただいてもよろしいです','教えてさしあげてもいいです','教えてくださってもいいです','教えてもらえますか'],
+    ans: 0,
+    feedback: 'Murid meminta guru untuk mengajarinya secara sopan, sehingga harus menggunakan kenjōgo.「教えていただいてもよろしいですか（boleh saya minta tolong diajarkan?）」adalah jawaban yang benar.「教えてさしあげる」berarti diri sendiri yang mengajari orang lain, maknanya terbalik.「教えてくださる」adalah sonkeigo yang berarti guru yang memilih untuk mengajar, bukan permintaan murid.'
+  },
+  {
+    id: 37,
+    dialog: [
+      {s:'<ruby>医者<rt>いしゃ</rt></ruby>', t:'<ruby>最<rt>もっと</rt></ruby>近、お酒をたくさん飲んでいますか。'},
+      {s:'<ruby>患者<rt>かんじゃ</rt></ruby>', t:'はい、<ruby>仕事<rt>しごと</rt></ruby>の後に毎日飲んでいます。'},
+      {s:'<ruby>医者<rt>いしゃ</rt></ruby>', t:'<ruby>健康<rt>けんこう</rt></ruby>のために、少し【BLANK】ほうがいいですよ。'}
+    ],
+    opts: ['飲んだ','<ruby>控<rt>ひか</rt></ruby>えた','やめる','飲みすぎた'],
+    ans: 1,
+    feedback: 'Pola「〜ほうがいい」harus didahului oleh bentuk lampau (た形) dari kata kerja. Untuk tujuan kesehatan, kata「控えた（mengurangi）」adalah yang tepat artinya.「控える」berarti mengurangi frekuensi atau jumlah sesuatu.'
+  },
+  {
+    id: 38,
+    dialog: [
+      {s:'社員A', t:'あ、<ruby>社長<rt>しゃちょう</rt></ruby>がいらっしゃいましたよ。'},
+      {s:'社員B', t:'<ruby>本当<rt>ほんとう</rt></ruby>だ。あちらで誰かと【BLANK】ね。'},
+      {s:'社員A', t:'あの方は<ruby>新<rt>あたら</rt></ruby>しいお<ruby>客様<rt>きゃくさま</rt></ruby>でしょうか。'}
+    ],
+    opts: ['お話ししています','お話しになっています','お話しされています','お話しいたしています'],
+    ans: 1,
+    feedback: '<ruby>社長<rt>しゃちょう</rt></ruby>（目上）の動作を描写するので尊敬語が<ruby>必要<rt>ひつよう</rt></ruby>。「お話しになっています」が正解。「お話しされています」は二重敬語になります。「お話しいたす」は謙譲語です。'
+  },
+  {
+    id: 39,
+    dialog: [
+      {s:'客', t:'すみません、ここで<ruby>写真<rt>しゃしん</rt></ruby>を【BLANK】か。'},
+      {s:'店員', t:'申し訳ありません。<ruby>館内<rt>かんない</rt></ruby>での<ruby>撮影<rt>さつえい</rt></ruby>はご<ruby>遠慮<rt>えんりょ</rt></ruby>ください。'},
+      {s:'客', t:'あ、そうですか。わかりました。'}
+    ],
+    opts: ['撮ってもいいです','撮らせていただいてもよろしいです','撮らなければなりません','撮ってもかまいません'],
+    ans: 1,
+    feedback: '客が店員に<ruby>撮影<rt>さつえい</rt></ruby>の許可を丁寧に求めているので「撮らせていただいてもよろしいですか」が正解。「いただく」は謙譲語で<ruby>適切<rt>てきせつ</rt></ruby>な敬語表現です。'
+  },
+  {
+    id: 40,
+    dialog: [
+      {s:'<ruby>先輩<rt>せんぱい</rt></ruby>', t:'パソコンの<ruby>調子<rt>ちょうし</rt></ruby>が悪いみたいだね。'},
+      {s:'<ruby>後輩<rt>こうはい</rt></ruby>', t:'はい、急に動かなくなってしまって…。'},
+      {s:'<ruby>先輩<rt>せんぱい</rt></ruby>', t:'一度、<ruby>電源<rt>でんげん</rt></ruby>を【BLANK】ほうがいいよ。直るかもしれないから。'}
+    ],
+    opts: ['切った','切らない','切る','切って'],
+    ans: 0,
+    feedback: '「〜ほうがいい」の前は動詞のた形（過去形）が来ます。「切ったほうがいいよ」が正解。「切らないほうがいい」は否定の勧め（しない方がよい）で意味が逆です。'
+  },
+  {
+    id: 41,
+    dialog: [
+      {s:'社員', t:'<ruby>部長<rt>ぶちょう</rt></ruby>、お<ruby>荷物<rt>にもつ</rt></ruby>が重そうですね。【BLANK】か。'},
+      {s:'<ruby>部長<rt>ぶちょう</rt></ruby>', t:'ああ、ありがとう。助かるよ。'},
+      {s:'社員', t:'いいえ、お安い<ruby>御用<rt>ごよう</rt></ruby>です。'}
+    ],
+    opts: ['お持ちしましょう','お持ちになります','<ruby>持<rt>も</rt></ruby>ってください','お持ちください'],
+    ans: 0,
+    feedback: '社員が<ruby>部長<rt>ぶちょう</rt></ruby>の<ruby>荷物<rt>にもつ</rt></ruby>を「持つ」申し出をするので、謙譲語「お持ちする」が正解。「お持ちになる」は尊敬語（相手が持つ場合）。「お持ちください」は相手への依頼です。'
+  },
+  {
+    id: 42,
+    dialog: [
+      {s:'友人A', t:'雨が降ってきたね。<ruby>傘<rt>かさ</rt></ruby>、<ruby>持<rt>も</rt></ruby>ってる？'},
+      {s:'友人B', t:'ううん、<ruby>持<rt>も</rt></ruby>ってない。どうしよう。'},
+      {s:'友人A', t:'<ruby>駅<rt>えき</rt></ruby>まで私の<ruby>傘<rt>かさ</rt></ruby>に【BLANK】ほうがいいよ。<ruby>濡<rt>ぬ</rt></ruby>れちゃうから。'}
+    ],
+    opts: ['入った','入らない','入る','入って'],
+    ans: 0,
+    feedback: '「〜ほうがいい」の前は動詞のた形（過去形）が来ます。「入ったほうがいいよ」が正解。友人同士なのでカジュアルな表現が自然です。'
+  },
+  {
+    id: 43,
+    dialog: [
+      {s:'学生', t:'<ruby>先生<rt>せんせい</rt></ruby>、<ruby>研究室<rt>けんきゅうしつ</rt></ruby>に【BLANK】か。'},
+      {s:'<ruby>先生<rt>せんせい</rt></ruby>', t:'はい、どうぞ。入ってください。'},
+      {s:'学生', t:'<ruby>失礼<rt>しつれい</rt></ruby>いたします。<ruby>昨日<rt>きのう</rt></ruby>お話しした件ですが…。'}
+    ],
+    opts: ['入ってもいいです','入らせていただいてもよろしいです','お入りになってもいいです','入ってもよろしいです'],
+    ans: 1,
+    feedback: '学生が<ruby>先生<rt>せんせい</rt></ruby>に<ruby>研究室<rt>けんきゅうしつ</rt></ruby>へ入る許可を丁寧に求めているので「入らせていただいてもよろしいですか」が正解。「お入りになる」は尊敬語（<ruby>先生<rt>せんせい</rt></ruby>が入る場合）で不<ruby>適切<rt>てきせつ</rt></ruby>。'
+  },
+  {
+    id: 44,
+    dialog: [
+      {s:'店員', t:'こちらでお<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がりですか。'},
+      {s:'客', t:'いいえ、【BLANK】。'},
+      {s:'店員', t:'かしこまりました。<ruby>袋<rt>ふくろ</rt></ruby>にお入れしますね。'}
+    ],
+    opts: ['持ち帰ります','お持ち帰りになります','持ち帰らせていただきます','持ち<ruby>帰<rt>かえ</rt></ruby>ってください'],
+    ans: 0,
+    feedback: '客が自<ruby>分<rt>ぶん</rt></ruby>のことを言うので通常形「持ち帰ります」が<ruby>最<rt>もっと</rt></ruby>も自然。「お持ち帰りになります」は尊敬語で自<ruby>分<rt>ぶん</rt></ruby>には使いません。「持ち帰らせていただきます」は少し過剰ですが<ruby>文法<rt>ぶんぽう</rt></ruby>的には可。'
+  },
+  {
+    id: 45,
+    dialog: [
+      {s:'母', t:'<ruby>宿題<rt>しゅくだい</rt></ruby>、もう終わったの？'},
+      {s:'子', t:'まだ。後でやるよ。'},
+      {s:'母', t:'先に【BLANK】ほうがいいわよ。後だと<ruby>眠<rt>ねむ</rt></ruby>くなるでしょ。'}
+    ],
+    opts: ['やった','やらない','やる','やって'],
+    ans: 0,
+    feedback: '「〜ほうがいい」の前は動詞のた形（過去形）が来ます。「やったほうがいいわよ」が正解。親が子に勧めている日常的な<ruby>会話<rt>かいわ</rt></ruby>です。'
+  },
+  {
+    id: 46,
+    dialog: [
+      {s:'<ruby>秘書<rt>ひしょ</rt></ruby>', t:'<ruby>社長<rt>しゃちょう</rt></ruby>、お<ruby>客様<rt>きゃくさま</rt></ruby>が【BLANK】。'},
+      {s:'<ruby>社長<rt>しゃちょう</rt></ruby>', t:'ああ、すぐに行きます。<ruby>応接室<rt>おうせつしつ</rt></ruby>にご案内して。'},
+      {s:'<ruby>秘書<rt>ひしょ</rt></ruby>', t:'かしこまりました。'}
+    ],
+    opts: ['まいりました','お見えになりました','伺いました','拝見しました'],
+    ans: 1,
+    feedback: 'お<ruby>客様<rt>きゃくさま</rt></ruby>（外部の人）が来たことを<ruby>社長<rt>しゃちょう</rt></ruby>に伝えるので、お<ruby>客様<rt>きゃくさま</rt></ruby>に対する尊敬語「お見えになる」が正解。「まいる」は謙譲語（自<ruby>分<rt>ぶん</rt></ruby>が行く場合）。「伺う」も謙譲語で不<ruby>適切<rt>てきせつ</rt></ruby>。'
+  },
+  {
+    id: 47,
+    dialog: [
+      {s:'友人A', t:'このケーキ、<ruby>一口<rt>ひとくち</rt></ruby>【BLANK】か。'},
+      {s:'友人B', t:'いいよ、食べてみて。すごく美味しいよ。'},
+      {s:'友人A', t:'ありがとう！<ruby>本当<rt>ほんとう</rt></ruby>だ、<ruby>甘<rt>あま</rt></ruby>すぎなくていいね。'}
+    ],
+    opts: ['食べてもいいですか','食べてもいい','食べさせてくれる','食べてもかまわない'],
+    ans: 1,
+    feedback: '友人同士のカジュアルな<ruby>会話<rt>かいわ</rt></ruby>なので「食べてもいい？」（疑問形省略）が<ruby>最<rt>もっと</rt></ruby>自然。「食べてもいいですか」は丁寧すぎ、「食べてもかまわない」は相手が言う表現。'
+  },
+  {
+    id: 48,
+    dialog: [
+      {s:'課長', t:'この<ruby>書類<rt>しょるい</rt></ruby>、もう読みましたか。'},
+      {s:'社員', t:'はい、<ruby>昨日<rt>きのう</rt></ruby>【BLANK】。'},
+      {s:'課長', t:'では、<ruby>修正<rt>しゅうせい</rt></ruby><ruby>箇所<rt>かしょ</rt></ruby>を教えてください。'}
+    ],
+    opts: ['読みました','お読みになりました','拝読(はいどく)いたしました','拝見されました'],
+    ans: 2,
+    feedback: '社員が自<ruby>分<rt>ぶん</rt></ruby>の行為（読んだこと）を<ruby>課長<rt>かちょう</rt></ruby>に伝えるので謙譲語が<ruby>必要<rt>ひつよう</rt></ruby>。「<ruby>拝読<rt>はいどく</rt></ruby>いたしました」が<ruby>最<rt>もっと</rt></ruby>も丁寧で正解。「お読みになる」は尊敬語（<ruby>課長<rt>かちょう</rt></ruby>が読む場合）。「拝見される」は誤った表現です。'
+  },
+  {
+    id: 49,
+    dialog: [
+      {s:'夫', t:'<ruby>最<rt>もっと</rt></ruby>近、<ruby>太<rt>ふと</rt></ruby>っちゃったなあ。'},
+      {s:'<ruby>妻<rt>つま</rt></ruby>', t:'夜遅くに<ruby>甘<rt>あま</rt></ruby>いものを【BLANK】ほうがいいわよ。'},
+      {s:'夫', t:'わかってるんだけど、つい食べちゃうんだよね。'}
+    ],
+    opts: ['食べた','食べない','食べなかった','食べること'],
+    ans: 1,
+    feedback: '「〜ないほうがいい」で食べないことを勧めています。否定の「〜ないほうがいい」の場合、動詞は「ない形（否定形）」のまま使います。「食べないほうがいい」が正解。'
+  },
+  {
+    id: 50,
+    dialog: [
+      {s:'学生', t:'<ruby>先生<rt>せんせい</rt></ruby>、<ruby>来週<rt>らいしゅう</rt></ruby>の<ruby>月曜日<rt>げつようび</rt></ruby>に<ruby>伺<rt>うかが</rt></ruby>ってもよろしいでしょうか。'},
+      {s:'<ruby>先生<rt>せんせい</rt></ruby>', t:'<ruby>月曜日<rt>げつようび</rt></ruby>は<ruby>一日中<rt>いちにちじゅう</rt></ruby><ruby>会議<rt>かいぎ</rt></ruby>なんだ。<ruby>火曜日<rt>かようび</rt></ruby>なら【BLANK】よ。'},
+      {s:'学生', t:'では、<ruby>火曜日<rt>かようび</rt></ruby>の<ruby>午後<rt>ごご</rt></ruby>に伺います。'}
+    ],
+    opts: ['かまいません','いらっしゃいません','伺いません','まいりません'],
+    ans: 0,
+    feedback: '「<ruby>火曜日<rt>かようび</rt></ruby>なら大丈夫」という意味なので「かまいません（<ruby>問題<rt>もんだい</rt></ruby>ありません）」が正解。「いらっしゃいません」などは否定の意味になり文脈に合いません。'
+  }
+];
+
+const OPT = ['A','B','C','D'];
+let userAnswers = {};
+let submitted = false;
+
+// ─── BUILD QUIZ ───────────────────────────────────────────────────────────────
+function buildQuiz() {
+  const g1 = document.getElementById('grid-1');
+  const g2 = document.getElementById('grid-2');
+  g1.innerHTML = '';
+  g2.innerHTML = '';
+
+  QUESTIONS.forEach(q => {
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = `card-${q.id}`;
+
+    const dialogHTML = q.dialog.map(line => {
+      let txt = line.t.replace('【BLANK】', '<span class="blank">（　　）</span>');
+      return `<div><span class="spk">${line.s}：</span>${txt}</div>`;
+    }).join('');
+
+    const optsHTML = q.opts.map((opt, i) => `
+      <label class="opt" id="opt-${q.id}-${i}" onclick="pick(${q.id},${i})">
+        <input type="radio" name="q${q.id}">
+        <span class="opt-badge">${OPT[i]}</span>
+        <span>${opt}</span>
+      </label>
+    `).join('');
+
+    card.innerHTML = `
+      <div class="q-card-head">
+        <div class="q-num">${q.id}</div>
+        <div class="q-dialog">${dialogHTML}</div>
+      </div>
+      <div class="q-options">${optsHTML}</div>
+      <div class="q-feedback" id="fb-${q.id}"></div>
+    `;
+
+    (q.id <= 25 ? g1 : g2).appendChild(card);
+  });
+  updateProgress();
+}
+
+// ─── PICK ANSWER ──────────────────────────────────────────────────────────────
+function pick(qId, idx) {
+  if (submitted) return;
+  userAnswers[qId] = idx;
+  for (let i = 0; i < 4; i++) {
+    const el = document.getElementById(`opt-${qId}-${i}`);
+    if (el) el.classList.toggle('sel', i === idx);
+  }
+  updateProgress();
+}
+
+function updateProgress() {
+  const count = Object.keys(userAnswers).length;
+  document.getElementById('ans-count').textContent = count;
+  document.getElementById('pbar').style.width = (count / 50 * 100) + '%';
+}
+
+// ─── SUBMIT ───────────────────────────────────────────────────────────────────
+function submitAll() {
+  if (submitted) return;
+  submitted = true;
+
+  let score = 0;
+  QUESTIONS.forEach(q => {
+    const chosen = userAnswers[q.id] ?? null;
+    const card   = document.getElementById(`card-${q.id}`);
+    const fb     = document.getElementById(`fb-${q.id}`);
+
+    for (let i = 0; i < 4; i++) {
+      const el = document.getElementById(`opt-${q.id}-${i}`);
+      if (el) el.classList.remove('sel');
+    }
+
+    const correctEl = document.getElementById(`opt-${q.id}-${q.ans}`);
+    if (correctEl) correctEl.classList.add('res-correct');
+
+    card.classList.remove('state-correct','state-wrong');
+
+    if (chosen === null) {
+      fb.innerHTML = `<div class="fb-label">⚠ Belum dijawab</div>Jawaban benar: <strong>${OPT[q.ans]}) ${q.opts[q.ans]}</strong><br>${q.feedback}`;
+      fb.className = 'q-feedback visible fb-wrong';
+      card.classList.add('state-wrong');
+    } else if (chosen === q.ans) {
+      score++;
+      document.getElementById(`opt-${q.id}-${chosen}`).classList.add('res-correct');
+      fb.innerHTML = `<div class="fb-label">✓ Benar!</div>${q.feedback}`;
+      fb.className = 'q-feedback visible fb-correct';
+      card.classList.add('state-correct');
+    } else {
+      document.getElementById(`opt-${q.id}-${chosen}`).classList.add('res-wrong');
+      fb.innerHTML = `<div class="fb-label">✗ Kurang tepat</div>Jawaban benar: <strong>${OPT[q.ans]}) ${q.opts[q.ans]}</strong><br>${q.feedback}`;
+      fb.className = 'q-feedback visible fb-wrong';
+      card.classList.add('state-wrong');
+    }
+  });
+
+  showScore(score);
+
+  // show PDF button
+  document.getElementById('btn-submit').style.display = 'none';
+  document.getElementById('btn-pdf-bar').classList.add('visible');
+
+  // print banner
+  const nama = document.getElementById('nama').value || '—';
+  const tgl  = document.getElementById('tanggal').value || '—';
+  const pct  = Math.round(score/50*100);
+  document.getElementById('print-banner').innerHTML =
+    `<strong>Hasil: ${score} / 50 (${pct}%)</strong> &nbsp;|&nbsp; <ruby>名前<rt>なまえ</rt></ruby>: ${nama} &nbsp;|&nbsp; 日付: ${tgl}`;
+}
+
+// ─── SHOW SCORE MODAL ─────────────────────────────────────────────────────────
+function showScore(score) {
+  const pct = Math.round(score / 50 * 100);
+  document.getElementById('m-score').textContent = score;
+  document.getElementById('m-denom').textContent = `dari 50 soal benar (${pct}%)`;
+
+  const pctEl = document.getElementById('m-pct');
+  const gradeEl = document.getElementById('m-grade');
+  let grade, color, bg;
+  if (pct >= 90)      { grade = '優秀 · Sangat Baik ⭐⭐⭐'; color='#15803d'; bg='#f0fdf4'; }
+  else if (pct >= 75) { grade = '良好 · Baik ⭐⭐';           color='#1d4ed8'; bg='#eff6ff'; }
+  else if (pct >= 60) { grade = '合格 · Cukup ⭐';             color='#b45309'; bg='#fffbeb'; }
+  else                { grade = 'もっと<ruby>練習<rt>れんしゅう</rt></ruby>しましょう！';        color='#b91c1c'; bg='#fef2f2'; }
+
+  pctEl.textContent = `${pct}%`;
+  pctEl.style.cssText = `color:${color};background:${bg};border:1px solid ${color}40;`;
+  gradeEl.textContent = grade;
+  gradeEl.style.color = color;
+
+  document.getElementById('overlay').classList.add('open');
+}
+
+function closeOverlay() {
+  document.getElementById('overlay').classList.remove('open');
+}
+
+// ─── RESET ────────────────────────────────────────────────────────────────────
+function resetAll() {
+  userAnswers = {};
+  submitted = false;
+  QUESTIONS.forEach(q => {
+    const card = document.getElementById(`card-${q.id}`);
+    const fb   = document.getElementById(`fb-${q.id}`);
+    card.classList.remove('state-correct','state-wrong');
+    fb.className = 'q-feedback';
+    fb.innerHTML = '';
+    for (let i = 0; i < 4; i++) {
+      const el = document.getElementById(`opt-${q.id}-${i}`);
+      if (el) el.classList.remove('sel','res-correct','res-wrong');
+    }
+  });
+  document.getElementById('btn-submit').style.display = '';
+  document.getElementById('btn-pdf-bar').classList.remove('visible');
+  document.getElementById('print-banner').innerHTML = '';
+  updateProgress();
+}
+
+// ─── DOWNLOAD PDF (browser print) ─────────────────────────────────────────────
+function downloadPDF() {
+  closeOverlay();
+  setTimeout(() => window.print(), 300);
+}
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', buildQuiz);
+</script>
+</body>
+</html>
