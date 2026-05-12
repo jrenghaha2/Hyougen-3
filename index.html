@@ -680,8 +680,8 @@ const QUESTIONS = [
       {s:'B', t:'では、こちらの<ruby>席<rt>せき</rt></ruby>へどうぞ。'}
     ],
     opts: ['ごめんください','お<ruby>邪魔<rt>じゃま</rt></ruby>します','こんにちは','<ruby>失礼<rt>しつれい</rt></ruby>します'],
-    ans: 0,
-    feedback: 'Salam yang paling tepat saat memasuki restoran dan disambut dengan「いらっしゃいませ（selamat datang）」adalah「ごめんください（permisi / excuse me）」. Ini adalah ucapan yang digunakan saat memasuki suatu tempat.'
+    ans: 2,
+    feedback: 'Saat memasuki restoran modern dan disambut dengan「いらっしゃいませ」, sapaan yang paling natural dari pelanggan adalah「こんにちは（halo / selamat siang）」—sederhana dan sangat lazim dipakai. 「ごめんください」lebih tepat untuk memasuki rumah orang atau toko kecil yang sepi saat tidak ada pelayan di depan. 「お邪魔します」dipakai saat masuk ke rumah seseorang setelah dipersilakan.'
   },
   {
     id: 20,
@@ -770,9 +770,9 @@ const QUESTIONS = [
       {s:'店員', t:'はい、どうぞ。ご<ruby>自由<rt>じゆう</rt></ruby>にお<ruby>持<rt>も</rt></ruby>ちください。'},
       {s:'客', t:'ありがとうございます。<ruby>友達<rt>ともだち</rt></ruby>の分ももらってもいいですか。'}
     ],
-    opts: ['いただいてもよろしいです','もらってもよろしいです','いただいてもいいですか','<ruby>頂戴<rt>ちょうだい</rt></ruby>してもよろしいです'],
+    opts: ['いただいてもよろしいです','もらっていいです','いただけますでしょうか','<ruby>頂戴<rt>ちょうだい</rt></ruby>してもよろしいです'],
     ans: 0,
-    feedback: 'Di template soal sudah ada「か」di luar blank, sehingga semua opsi otomatis menjadi kalimat tanya. Jawaban yang paling tepat dan sopan adalah A「いただいてもよろしいです（か）」—「いただく」adalah kenjōgo dari「もらう」, dan「よろしい」lebih formal daripada「いい」, sehingga paling sesuai untuk percakapan dengan pelayan toko.'
+    feedback: 'Di template soal sudah ada「か」di luar blank, sehingga semua opsi otomatis menjadi kalimat tanya. Jawaban yang paling tepat dan sopan kepada pelayan toko adalah A「いただいてもよろしいですか」—「いただく」adalah kenjōgo dari「もらう」dan「よろしい」lebih formal dari「いい」, kombinasi keduanya pas untuk situasi ini.「もらっていいですか」terlalu kasual untuk pelayan toko.「いただけますでしょうか」bermakna meminta bukan meminta izin—secara nuansa berbeda.「頂戴してもよろしいですか」terdengar sangat formal dan agak kaku untuk konteks ini.'
   },
   {
     id: 28,
@@ -814,9 +814,9 @@ const QUESTIONS = [
       {s:'客', t:'二人です。<ruby>静<rt>しず</rt></ruby>かな<ruby>席<rt>せき</rt></ruby>に【BLANK】か。'},
       {s:'店員', t:'はい、<ruby>奥<rt>おく</rt></ruby>の<ruby>窓側<rt>まどがわ</rt></ruby>の<ruby>席<rt>せき</rt></ruby>が<ruby>空<rt>あ</rt></ruby>いております。どうぞ。'}
     ],
-    opts: ['<ruby>座<rt>すわ</rt></ruby>ってもいいです','お<ruby>座<rt>すわ</rt></ruby>りになってもいいです','<ruby>座<rt>すわ</rt></ruby>らせていただいてもよろしいです','<ruby>座<rt>すわ</rt></ruby>ってはいけません'],
-    ans: 2,
-    feedback: 'Pelanggan meminta izin kepada pelayan dengan sopan untuk duduk.「<ruby>座<rt>すわ</rt></ruby>らせていただいてもよろしいですか（boleh saya duduk di sini?）」adalah yang paling sopan dan tepat.「お座りになる」adalah sonkeigo (bentuk hormat untuk orang lain), tidak boleh digunakan untuk tindakan diri sendiri.'
+    opts: ['<ruby>座<rt>すわ</rt></ruby>ってもいいです','あちらに<ruby>座<rt>すわ</rt></ruby>ってもよろしいです','<ruby>座<rt>すわ</rt></ruby>らせていただいてもよろしいです','<ruby>座<rt>すわ</rt></ruby>ってはいけません'],
+    ans: 1,
+    feedback: 'Pelanggan meminta izin kepada pelayan untuk duduk di tempat yang lebih tenang.「あちらに<ruby>座<rt>すわ</rt></ruby>ってもよろしいですか（boleh saya duduk di sana?）」adalah yang paling natural untuk percakapan di restoran—sopan namun tidak berlebihan.「座らせていただいてもよろしいですか」secara grammar benar, tapi terasa terlalu formal (over-keigo) untuk restoran biasa dan jarang terdengar dari pelanggan dalam situasi ini.「座ってもいいですか」terlalu kasual untuk berbicara dengan pelayan.'
   },
   {
     id: 32,
@@ -836,9 +836,9 @@ const QUESTIONS = [
       {s:'客', t:'田中と<ruby>申<rt>もう</rt></ruby>します。3時に<ruby>予約<rt>よやく</rt></ruby>しております。'},
       {s:'受付', t:'田中<ruby>様<rt>さま</rt></ruby>ですね。お<ruby>待<rt>ま</rt></ruby>ちしておりました。'}
     ],
-    opts: ['おっしゃっていただけます','<ruby>伺<rt>うかが</rt></ruby>ってもよろしいです','おっしゃいます','お<ruby>聞<rt>き</rt></ruby>きしてもよろしいです'],
+    opts: ['おっしゃっていただけます','お<ruby>伺<rt>うかが</rt></ruby>いしてもよろしいでしょうか','おっしゃいます','お<ruby>聞<rt>き</rt></ruby>きしてもよろしいです'],
     ans: 1,
-    feedback: 'Petugas resepsionis (pihak sendiri) menanyakan nama tamu, sehingga harus menggunakan kenjōgo untuk tindakan "bertanya". Di antara opsi yang ada,「<ruby>伺<rt>うかが</rt></ruby>ってもよろしいですか（boleh saya tanyakan?）」adalah yang paling natural dan idiomatis—「伺う」adalah kenjōgo yang tepat untuk makna "menanyakan" atau "mendengar". Sementara「お聞きしてもよろしいです」secara grammar memang kenjōgo, ekspresi「お名前を伺う」jauh lebih lazim dan natural di resepsionis.「おっしゃる」adalah sonkeigo untuk tindakan lawan bicara, bukan diri sendiri.'
+    feedback: 'Petugas resepsionis (pihak sendiri) menanyakan nama tamu, sehingga harus menggunakan kenjōgo untuk tindakan "bertanya".「お伺いしてもよろしいでしょうか（boleh saya tanyakan?）」adalah yang paling natural dan idiomatis—「伺う」adalah kenjōgo yang tepat, dan kombinasi「お〜する」+ 「よろしいでしょうか」adalah bentuk paling lazim di resepsionis profesional.「おっしゃる」adalah sonkeigo untuk tindakan lawan bicara, tidak boleh dipakai untuk tindakan diri sendiri.「お聞きしてもよろしいです」terasa kurang lengkap tanpa「でしょうか」di akhir.'
   },
   {
     id: 34,
@@ -986,13 +986,13 @@ const QUESTIONS = [
   {
     id: 47,
     dialog: [
-      {s:'友人A', t:'このケーキ、<ruby>一口<rt>ひとくち</rt></ruby>【BLANK】か。'},
+      {s:'友人A', t:'このケーキ、<ruby>一口<rt>ひとくち</rt></ruby>【BLANK】？'},
       {s:'友人B', t:'いいよ、食べてみて。すごく<ruby>美味<rt>おい</rt></ruby>しいよ。'},
       {s:'友人A', t:'ありがとう！<ruby>本当<rt>ほんとう</rt></ruby>だ、<ruby>甘<rt>あま</rt></ruby>すぎなくていいね。'}
     ],
     opts: ['食べてもいいですか','食べてもいい','食べさせてくれる','食べてもかまわない'],
     ans: 1,
-    feedback: 'Karena percakapan antara teman yang santai,「食べてもいい？」（bentuk tanya informal tanpa か）adalah yang paling natural. Jawaban B「食べてもいい」sudah menjadi kalimat tanya karena ada「か」di luar blank.「食べてもいいですか」terdengar terlalu formal untuk teman.「食べてもかまわない」biasanya diucapkan oleh pihak yang memberi izin, bukan yang meminta.'
+    feedback: 'Karena percakapan antara teman yang santai, jawaban「食べてもいい」menjadi kalimat tanya informal dengan intonasi naik—persis seperti yang ditunjukkan「？」di template dialog. Ini lebih natural daripada「食べてもいいですか」yang terdengar terlalu formal untuk teman.「食べてもかまわない」biasanya diucapkan oleh pihak yang memberi izin, bukan yang meminta. Pola「〜してもいい？」adalah cara paling umum meminta izin secara kasual dalam percakapan sehari-hari.'
   },
   {
     id: 48,
