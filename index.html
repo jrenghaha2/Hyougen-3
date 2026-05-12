@@ -771,8 +771,8 @@ const QUESTIONS = [
       {s:'客', t:'ありがとうございます。<ruby>友達<rt>ともだち</rt></ruby>の分ももらってもいいですか。'}
     ],
     opts: ['いただいてもよろしいです','もらってもよろしいです','いただいてもいいですか','<ruby>頂戴<rt>ちょうだい</rt></ruby>してもよろしいです'],
-    ans: 2,
-    feedback: 'Karena meminta izin, harus menggunakan bentuk tanya. Jawaban「いただいてもいいですか（boleh saya ambil?）」adalah yang benar.「いただく」adalah bentuk rendah diri dari「もらう」yang tepat digunakan kepada pelayan toko. Pilihan lain tidak berbentuk kalimat tanya sehingga tidak bisa digunakan untuk meminta izin.'
+    ans: 0,
+    feedback: 'Di template soal sudah ada「か」di luar blank, sehingga semua opsi otomatis menjadi kalimat tanya. Jawaban yang paling tepat dan sopan adalah A「いただいてもよろしいです（か）」—「いただく」adalah kenjōgo dari「もらう」, dan「よろしい」lebih formal daripada「いい」, sehingga paling sesuai untuk percakapan dengan pelayan toko.'
   },
   {
     id: 28,
@@ -837,8 +837,8 @@ const QUESTIONS = [
       {s:'受付', t:'田中<ruby>様<rt>さま</rt></ruby>ですね。お<ruby>待<rt>ま</rt></ruby>ちしておりました。'}
     ],
     opts: ['おっしゃっていただけます','<ruby>伺<rt>うかが</rt></ruby>ってもよろしいです','おっしゃいます','お<ruby>聞<rt>き</rt></ruby>きしてもよろしいです'],
-    ans: 3,
-    feedback: 'Petugas resepsionis (pihak sendiri) menanyakan nama kepada tamu, sehingga harus menggunakan kenjōgo (bentuk rendah diri) untuk tindakan "bertanya".「お<ruby>聞<rt>き</rt></ruby>きしてもよろしいですか（boleh saya tanyakan?）」adalah yang benar.「おっしゃる」adalah sonkeigo untuk saat lawan bicara yang berbicara, bukan untuk diri sendiri.'
+    ans: 1,
+    feedback: 'Petugas resepsionis (pihak sendiri) menanyakan nama tamu, sehingga harus menggunakan kenjōgo untuk tindakan "bertanya". Di antara opsi yang ada,「<ruby>伺<rt>うかが</rt></ruby>ってもよろしいですか（boleh saya tanyakan?）」adalah yang paling natural dan idiomatis—「伺う」adalah kenjōgo yang tepat untuk makna "menanyakan" atau "mendengar". Sementara「お聞きしてもよろしいです」secara grammar memang kenjōgo, ekspresi「お名前を伺う」jauh lebih lazim dan natural di resepsionis.「おっしゃる」adalah sonkeigo untuk tindakan lawan bicara, bukan diri sendiri.'
   },
   {
     id: 34,
@@ -859,8 +859,8 @@ const QUESTIONS = [
       {s:'課長', t:'それはよかったです。では、<ruby>会場<rt>かいじょう</rt></ruby>で会いましょう。'}
     ],
     opts: ['まいります','いらっしゃいます','おいでします','<ruby>伺<rt>うかが</rt></ruby>います'],
-    ans: 3,
-    feedback: 'Dalam percakapan ini,<ruby>課長<rt>かちょう</rt></ruby> (kepala divisi) menanyakan apakah Satou akan datang ke pesta. Karena Satou adalah bawahan, <ruby>課長<rt>かちょう</rt></ruby> menggunakan sonkeigo (bentuk hormat) untuk menanyakan tindakan Satou.「いらっしゃいますか（apakah Anda akan hadir?）」adalah pilihan yang paling tepat dari opsi yang tersedia. Satou sendiri kemudian merespons dengan「伺うつもりです」menggunakan kenjōgo.'
+    ans: 1,
+    feedback: '課長 menanyakan apakah Satou (bawahan) akan hadir ke pesta. Karena menanyakan tindakan lawan bicara (Satou), harus menggunakan sonkeigo (bentuk hormat).「いらっしゃいますか（apakah Anda akan hadir?）」adalah yang paling tepat. Satou kemudian merespons dengan「伺うつもりです」menggunakan kenjōgo—ini konsisten: atasan memakai sonkeigo untuk menanyakan, bawahan memakai kenjōgo untuk menjawab.「まいります」dan「伺います」adalah kenjōgo, tidak tepat dipakai atasan untuk menanyakan tindakan bawahan.'
   },
   {
     id: 36,
@@ -876,7 +876,7 @@ const QUESTIONS = [
   {
     id: 37,
     dialog: [
-      {s:'医者', t:'<ruby>最近<rt>さいきん</rt></ruby>、お<ruby>酒<rt>さけ</rt></ruby>をたくさん飲んでいますかたくさん飲んでいますか。'},
+      {s:'医者', t:'<ruby>最近<rt>さいきん</rt></ruby>、お<ruby>酒<rt>さけ</rt></ruby>をたくさん飲んでいますか。'},
       {s:'患者', t:'はい、<ruby>仕事<rt>しごと</rt></ruby>の後に<ruby>毎日<rt>まいにち</rt></ruby>飲んでいます。'},
       {s:'医者', t:'<ruby>健康<rt>けんこう</rt></ruby>のために、少し【BLANK】ほうがいいですよ。'}
     ],
