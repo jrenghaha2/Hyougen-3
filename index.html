@@ -401,7 +401,7 @@ body {
 
 <div class="identity-bar">
   <div class="id-field">
-    <label><ruby>名前<rt>なまえ</rt></ruby>:</label>
+    <label>名前:</label>
     <input type="text" id="nama" placeholder="Nama lengkap">
   </div>
   <div class="id-field">
@@ -417,7 +417,7 @@ body {
 <div class="section-header">
   <div class="section-tag">Bagian 1 · Soal 1–25</div>
   <div class="section-title">Daily Life &amp; Shopping</div>
-  <div class="section-instruction"><ruby>指示<rt>しじ</rt></ruby>：<ruby>最<rt>もっと</rt></ruby>も<ruby>適切<rt>てきせつ</rt></ruby>な<ruby>答<rt>こた</rt></ruby>えを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>びなさい。</div>
+  <div class="section-instruction">指示：最も適切な答えを一つ選びなさい。</div>
 </div>
 <div class="quiz-grid" id="grid-1"></div>
 
@@ -425,7 +425,7 @@ body {
 <div class="section-header" style="margin-top:32px;">
   <div class="section-tag">Bagian 2 · Soal 26–50</div>
   <div class="section-title">Keigo, Advice &amp; Permissions</div>
-  <div class="section-instruction"><ruby>次<rt>つぎ</rt></ruby>の<ruby>会話<rt>かいわ</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んで、（　　）に<ruby>最<rt>もっと</rt></ruby>もよいものを A, B, C, D から<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>びなさい。</div>
+  <div class="section-instruction">次の会話を読んで、（　　）に最もよいものを A, B, C, D から一つ選びなさい。</div>
 </div>
 <div class="quiz-grid" id="grid-2"></div>
 
@@ -465,7 +465,7 @@ const QUESTIONS = [
     id: 1,
     dialog: [
       {s:'A', t:'すみません、このりんごはいくらですか。'},
-      {s:'B', t:'それは<ruby>一<rt>ひと</rt></ruby>つ150円です。'},
+      {s:'B', t:'それは一つ150円です。'},
       {s:'A', t:'じゃあ、三つください。'},
       {s:'B', t:'はい、ありがとうございます。<ruby>全部<rt>ぜんぶ</rt></ruby>で【BLANK】です。'}
     ],
@@ -476,12 +476,12 @@ const QUESTIONS = [
   {
     id: 2,
     dialog: [
-      {s:'A', t:'いらっしゃいませ。何かお探しですか。'},
-      {s:'B', t:'はい、白いシャツを探しているんですが。'},
+      {s:'A', t:'いらっしゃいませ。何かお<ruby>探<rt>さが</rt></ruby>しですか。'},
+      {s:'B', t:'はい、白いシャツを<ruby>探<rt>さが</rt></ruby>しているんですが。'},
       {s:'A', t:'【BLANK】。こちらはいかがでしょうか。'},
-      {s:'B', t:'いいですね。試着してもいいですか。'}
+      {s:'B', t:'いいですね。<ruby>試着<rt>しちゃく</rt></ruby>してもいいですか。'}
     ],
-    opts: ['かしこまりました','お願いします','わかりません','ごめんなさい'],
+    opts: ['かしこまりました','お<ruby>願<rt>ねが</rt></ruby>いします','わかりません','ごめんなさい'],
     ans: 0,
     feedback: '「かしこまりました」adalah ekspresi sopan yang digunakan pelayan toko saat menerima permintaan pelanggan. Tingkatannya lebih formal dari「わかりました」dan sering dipakai dalam situasi pelayanan.'
   },
@@ -493,67 +493,67 @@ const QUESTIONS = [
       {s:'A', t:'早いですね。起きてから何をしますか。'},
       {s:'B', t:'【BLANK】、コーヒーを飲みます。'}
     ],
-    opts: ['シャワーを浴びてから','寝てから','<ruby>会社<rt>かいしゃ</rt></ruby>へ行ってから','晩ご飯を食べてから'],
+    opts: ['シャワーを<ruby>浴<rt>あ</rt></ruby>びてから','寝てから','<ruby>会社<rt>かいしゃ</rt></ruby>へ行ってから','<ruby>晩<rt>ばん</rt></ruby>ご<ruby>飯<rt>はん</rt></ruby>を食べてから'],
     ans: 0,
-    feedback: 'Kebiasaan yang paling natural setelah bangun tidur adalah「シャワーを浴びてから（setelah mandi）」. Pilihan B「寝てから」tidak masuk akal, sedangkan C dan D tidak sesuai dengan waktu pagi hari.'
+    feedback: 'Kebiasaan yang paling natural setelah bangun tidur adalah「シャワーを<ruby>浴<rt>あ</rt></ruby>びてから（setelah mandi）」. Pilihan B「寝てから」tidak masuk akal, sedangkan C dan D tidak sesuai dengan waktu pagi hari.'
   },
   {
     id: 4,
     dialog: [
-      {s:'A', t:'この靴、ちょっと小さいですね。'},
+      {s:'A', t:'この<ruby>靴<rt>くつ</rt></ruby>、ちょっと小さいですね。'},
       {s:'B', t:'そうですか。【BLANK】。'},
-      {s:'A', t:'はい、お願いします。あ、これはちょうどいいです。'},
+      {s:'A', t:'はい、お<ruby>願<rt>ねが</rt></ruby>いします。あ、これはちょうどいいです。'},
       {s:'B', t:'よかったです。'}
     ],
-    opts: ['もっと小さいのはありますか','もっと大きいのはありますか','それをください','高いですね'],
+    opts: ['もっと小さいのはありますか','もっと大きいのはありますか','それをください','<ruby>高<rt>たか</rt></ruby>いですね'],
     ans: 1,
     feedback: 'Karena A mengatakan「小さい（kecil）」, maka yang dibutuhkan selanjutnya adalah ukuran yang lebih besar. Pilihan B「もっと大きいのはありますか（apakah ada yang lebih besar?）」adalah alur percakapan yang tepat.'
   },
   {
     id: 5,
     dialog: [
-      {s:'A', t:'すみません、この<ruby>近<rt>ちか</rt></ruby>くに<ruby>銀行<rt>ぎんこう</rt></ruby>がありますか。'},
+      {s:'A', t:'すみません、この近くに<ruby>銀行<rt>ぎんこう</rt></ruby>がありますか。'},
       {s:'B', t:'はい、あそこのコンビニの<ruby>隣<rt>となり</rt></ruby>にありますよ。'},
       {s:'A', t:'【BLANK】。'},
       {s:'B', t:'いいえ、どういたしまして。'}
     ],
-    opts: ['<ruby>失礼<rt>しつれい</rt></ruby>します','助かりました。ありがとうございます','お疲れ様でした','お願いします'],
+    opts: ['<ruby>失礼<rt>しつれい</rt></ruby>します','<ruby>助<rt>たす</rt></ruby>かりました。ありがとうございます','お<ruby>疲れ様<rt>つかれさま</rt></ruby>でした','お<ruby>願<rt>ねが</rt></ruby>いします'],
     ans: 1,
-    feedback: 'B menjawab「どういたしまして（sama-sama）」, sehingga yang paling natural sebagai respons sebelumnya adalah ucapan terima kasih. Pilihan「助かりました。ありがとうございます（sangat membantu. Terima kasih）」adalah yang paling tepat.'
+    feedback: 'B menjawab「どういたしまして（sama-sama）」, sehingga yang paling natural sebagai respons sebelumnya adalah ucapan terima kasih. Pilihan「<ruby>助<rt>たす</rt></ruby>かりました。ありがとうございます（sangat membantu. Terima kasih）」adalah yang paling tepat.'
   },
   {
     id: 6,
     dialog: [
-      {s:'A', t:'<ruby>日曜日<rt>にちようび</rt></ruby>、どこかへ行きましたか。'},
+      {s:'A', t:'日曜日、どこかへ行きましたか。'},
       {s:'B', t:'いいえ、どこへも行きませんでした。'},
       {s:'A', t:'そうですか。【BLANK】。'},
       {s:'B', t:'<ruby>掃除<rt>そうじ</rt></ruby>をしたり、本を読んだりしました。'}
     ],
-    opts: ['何をしましたか','誰と行きましたか','いつ行きましたか','忙しかったですか'],
+    opts: ['何をしましたか','<ruby>誰<rt>だれ</rt></ruby>と行きましたか','いつ行きましたか','<ruby>忙<rt>いそが</rt></ruby>しかったですか'],
     ans: 0,
-    feedback: 'B menjawab「<ruby>掃除<rt>そうじ</rt></ruby>や<ruby>読書<rt>どくしょ</rt></ruby>（bersih-bersih dan membaca buku）」, sehingga A pasti menanyakan「何をしましたか（melakukan apa?）」. Pilihan B dan C tidak tepat karena mengasumsikan B pergi ke suatu tempat.'
+    feedback: 'B menjawab「掃除や読書（bersih-bersih dan membaca buku）」, sehingga A pasti menanyakan「何をしましたか（melakukan apa?）」. Pilihan B dan C tidak tepat karena mengasumsikan B pergi ke suatu tempat.'
   },
   {
     id: 7,
     dialog: [
-      {s:'A', t:'このカバン、とても軽いですね。'},
+      {s:'A', t:'このカバン、とても<ruby>軽<rt>かる</rt></ruby>いですね。'},
       {s:'B', t:'ええ、【BLANK】で作られていますから。'},
       {s:'A', t:'へえ、<ruby>丈夫<rt>じょうぶ</rt></ruby>そうですね。これにします。'}
     ],
-    opts: ['重い材料','特別な布','安い紙','鉄'],
+    opts: ['<ruby>重<rt>おも</rt></ruby>い<ruby>材料<rt>ざいりょう</rt></ruby>','<ruby>特別<rt>とくべつ</rt></ruby>な<ruby>布<rt>ぬの</rt></ruby>','<ruby>安<rt>やす</rt></ruby>い<ruby>紙<rt>かみ</rt></ruby>','<ruby>鉄<rt>てつ</rt></ruby>'],
     ans: 1,
-    feedback: 'Penilaian「軽い（ringan）」dan「<ruby>丈夫<rt>じょうぶ</rt></ruby>そう（tampak kuat）」cocok dengan bahan「特別な布（kain khusus）」. Besi atau bahan berat tidak akan membuat tas terasa ringan. Kertas murah pun tidak terkesan kuat.'
+    feedback: 'Penilaian「軽い（ringan）」dan「<ruby>丈夫<rt>じょうぶ</rt></ruby>そう（tampak kuat）」cocok dengan bahan「<ruby>特別<rt>とくべつ</rt></ruby>な<ruby>布<rt>ぬの</rt></ruby>（kain khusus）」. Besi atau bahan berat tidak akan membuat tas terasa ringan. Kertas murah pun tidak terkesan kuat.'
   },
   {
     id: 8,
     dialog: [
-      {s:'A', t:'すみません、この<ruby>料理<rt>りょうり</rt></ruby>は辛いですか。'},
-      {s:'B', t:'いいえ、全然【BLANK】ですよ。'},
-      {s:'A', t:'よかったです。辛いのは苦手なんです。'}
+      {s:'A', t:'すみません、この<ruby>料理<rt>りょうり</rt></ruby>は<ruby>辛<rt>から</rt></ruby>いですか。'},
+      {s:'B', t:'いいえ、<ruby>全然<rt>ぜんぜん</rt></ruby>【BLANK】ですよ。'},
+      {s:'A', t:'よかったです。<ruby>辛<rt>から</rt></ruby>いのは<ruby>苦手<rt>にがて</rt></ruby>なんです。'}
     ],
-    opts: ['辛くない','<ruby>甘<rt>あま</rt></ruby>くない','おいしくない','辛い'],
+    opts: ['<ruby>辛<rt>から</rt></ruby>くない','<ruby>甘<rt>あま</rt></ruby>くない','おいしくない','<ruby>辛<rt>から</rt></ruby>い'],
     ans: 0,
-    feedback: 'Karena dimulai dengan「いいえ（tidak）」dan ingin menyampaikan bahwa makanan tidak pedas, maka「辛くない（tidak pedas）」adalah jawaban yang benar. Pola「全然＋bentuk negatif」berarti "sama sekali tidak ~".'
+    feedback: 'Karena dimulai dengan「いいえ（tidak）」dan ingin menyampaikan bahwa makanan tidak pedas, maka「<ruby>辛<rt>から</rt></ruby>くない（tidak pedas）」adalah jawaban yang benar. Pola「全然＋bentuk negatif」berarti "sama sekali tidak ~".'
   },
   {
     id: 9,
@@ -563,56 +563,56 @@ const QUESTIONS = [
       {s:'A', t:'この<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>を教えてくれませんか。'},
       {s:'B', t:'それは「きゅうけい」と読みますよ。'}
     ],
-    opts: ['ちょっと手伝ってください','ちょっと伺いたいんですが','さようなら','お元気ですか'],
+    opts: ['ちょっと<ruby>手伝<rt>てつだ</rt></ruby>ってください','ちょっと<ruby>伺<rt>うかが</rt></ruby>いたいんですが','さようなら','お<ruby>元気<rt>げんき</rt></ruby>ですか'],
     ans: 1,
-    feedback: 'B menjawab「ええ、いいですよ（ya, boleh）」memberi izin, lalu A melanjutkan dengan pertanyaan. Maka kalimat pertama A adalah「ちょっと伺いたいんですが（boleh saya bertanya sebentar?）」yang paling natural sebagai pembuka percakapan.'
+    feedback: 'B menjawab「ええ、いいですよ（ya, boleh）」memberi izin, lalu A melanjutkan dengan pertanyaan. Maka kalimat pertama A adalah「ちょっと<ruby>伺<rt>うかが</rt></ruby>いたいんですが（boleh saya bertanya sebentar?）」yang paling natural sebagai pembuka percakapan.'
   },
   {
     id: 10,
     dialog: [
       {s:'A', t:'お<ruby>支払<rt>しはら</rt></ruby>いはカードですか、<ruby>現金<rt>げんきん</rt></ruby>ですか。'},
       {s:'B', t:'【BLANK】。'},
-      {s:'A', t:'かしこまりました。では、こちらにサインをお願いします。'}
+      {s:'A', t:'かしこまりました。では、こちらにサインをお<ruby>願<rt>ねが</rt></ruby>いします。'}
     ],
-    opts: ['カードでお願いします','<ruby>現金<rt>げんきん</rt></ruby>は<ruby>持<rt>も</rt></ruby>っていません','お釣りはいりません','高すぎます'],
+    opts: ['カードでお<ruby>願<rt>ねが</rt></ruby>いします','<ruby>現金<rt>げんきん</rt></ruby>は<ruby>持<rt>も</rt></ruby>っていません','お<ruby>釣<rt>つ</rt></ruby>りはいりません','高すぎます'],
     ans: 0,
-    feedback: 'Kasir meminta tanda tangan, yang berarti pembayaran dengan kartu kredit. Jawaban「カードでお願いします（tolong dengan kartu）」adalah yang paling tepat. Alur tanda tangan hanya terjadi saat memilih metode pembayaran kartu.'
+    feedback: 'Kasir meminta tanda tangan, yang berarti pembayaran dengan kartu kredit. Jawaban「カードでお<ruby>願<rt>ねが</rt></ruby>いします（tolong dengan kartu）」adalah yang paling tepat. Alur tanda tangan hanya terjadi saat memilih metode pembayaran kartu.'
   },
   {
     id: 11,
     dialog: [
-      {s:'A', t:'明日、一緒に<ruby>買<rt>か</rt></ruby>い<ruby>物<rt>もの</rt></ruby>に行きませんか。'},
+      {s:'A', t:'明日、<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>買い物<rt>かいもの</rt></ruby>に行きませんか。'},
       {s:'B', t:'明日はちょっと【BLANK】。'},
       {s:'A', t:'そうですか。じゃあ、<ruby>来週<rt>らいしゅう</rt></ruby>はどうですか。'},
-      {s:'B', t:'<ruby>来週<rt>らいしゅう</rt></ruby>なら大丈夫です。'}
+      {s:'B', t:'<ruby>来週<rt>らいしゅう</rt></ruby>なら<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>です。'}
     ],
-    opts: ['暇です','<ruby>都合<rt>つごう</rt></ruby>が悪いです','楽しみです','行きたいです'],
+    opts: ['<ruby>暇<rt>ひま</rt></ruby>です','<ruby>都合<rt>つごう</rt></ruby>が<ruby>悪<rt>わる</rt></ruby>いです','<ruby>楽<rt>たの</rt></ruby>しみです','行きたいです'],
     ans: 1,
-    feedback: 'A menawarkan alternatif「<ruby>来週<rt>らいしゅう</rt></ruby>はどうですか（bagaimana minggu depan?）」, yang berarti B tidak bisa besok. Jawaban「<ruby>都合<rt>つごう</rt></ruby>が悪いです（jadwalnya tidak cocok）」adalah yang paling tepat.'
+    feedback: 'A menawarkan alternatif「<ruby>来週<rt>らいしゅう</rt></ruby>はどうですか（bagaimana minggu depan?）」, yang berarti B tidak bisa besok. Jawaban「<ruby>都合<rt>つごう</rt></ruby>が<ruby>悪<rt>わる</rt></ruby>いです（jadwalnya tidak cocok）」adalah yang paling tepat.'
   },
   {
     id: 12,
     dialog: [
-      {s:'A', t:'このスカート、色がいいですね。'},
+      {s:'A', t:'このスカート、<ruby>色<rt>いろ</rt></ruby>がいいですね。'},
       {s:'B', t:'ありがとうございます。でも、ちょっと【BLANK】。'},
-      {s:'A', t:'そうですか。もっと長いのもありますよ。'},
+      {s:'A', t:'そうですか。もっと<ruby>長<rt>なが</rt></ruby>いのもありますよ。'},
       {s:'B', t:'じゃあ、それを見せてください。'}
     ],
-    opts: ['短いです','長いです','太いです','狭いです'],
+    opts: ['<ruby>短<rt>みじか</rt></ruby>いです','長いです','<ruby>太<rt>ふと</rt></ruby>いです','<ruby>狭<rt>せま</rt></ruby>いです'],
     ans: 0,
-    feedback: 'A menyarankan「もっと長いのもありますよ（ada yang lebih panjang juga）」, sehingga bisa disimpulkan B merasa roknya「短いです（terlalu pendek）」. Ini adalah jawaban yang benar.'
+    feedback: 'A menyarankan「もっと<ruby>長<rt>なが</rt></ruby>いのもありますよ（ada yang lebih panjang juga）」, sehingga bisa disimpulkan B merasa roknya「<ruby>短<rt>みじか</rt></ruby>いです（terlalu pendek）」. Ini adalah jawaban yang benar.'
   },
   {
     id: 13,
     dialog: [
       {s:'A', t:'<ruby>仕事<rt>しごと</rt></ruby>はどうですか。'},
-      {s:'B', t:'<ruby>最<rt>もっと</rt></ruby>近、とても忙しいです。'},
+      {s:'B', t:'<ruby>最近<rt>さいきん</rt></ruby>、とても<ruby>忙<rt>いそが</rt></ruby>しいです。'},
       {s:'A', t:'【BLANK】。'},
-      {s:'B', t:'ええ、毎日<ruby>残業<rt>ざんぎょう</rt></ruby>しています。'}
+      {s:'B', t:'ええ、<ruby>毎日<rt>まいにち</rt></ruby><ruby>残業<rt>ざんぎょう</rt></ruby>しています。'}
     ],
-    opts: ['大変ですね','暇ですね','楽しみですね','おめでとうございます'],
+    opts: ['<ruby>大変<rt>たいへん</rt></ruby>ですね','<ruby>暇<rt>ひま</rt></ruby>ですね','<ruby>楽<rt>たの</rt></ruby>しみですね','おめでとうございます'],
     ans: 0,
-    feedback: 'Sebagai bentuk empati terhadap situasi「忙しい（sibuk）」dan「毎日<ruby>残業<rt>ざんぎょう</rt></ruby>（lembur setiap hari）」, ungkapan「大変ですね（wah, berat ya）」adalah aizuchi (respons empati) yang paling natural.'
+    feedback: 'Sebagai bentuk empati terhadap situasi「忙しい（sibuk）」dan「毎日<ruby>残業<rt>ざんぎょう</rt></ruby>（lembur setiap hari）」, ungkapan「<ruby>大変<rt>たいへん</rt></ruby>ですね（wah, berat ya）」adalah aizuchi (respons empati) yang paling natural.'
   },
   {
     id: 14,
@@ -621,43 +621,43 @@ const QUESTIONS = [
       {s:'B', t:'あちらの<ruby>階段<rt>かいだん</rt></ruby>の<ruby>横<rt>よこ</rt></ruby>にあります。'},
       {s:'A', t:'ありがとうございます。行ってみます。'}
     ],
-    opts: ['<ruby>試着室<rt>しちゃくしつ</rt></ruby>','駐車場','<ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>','窓'],
+    opts: ['<ruby>試着室<rt>しちゃくしつ</rt></ruby>','<ruby>駐車場<rt>ちゅうしゃじょう</rt></ruby>','<ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>','<ruby>窓<rt>まど</rt></ruby>'],
     ans: 0,
     feedback: 'Karena sedang berbelanja dan mengatakan「行ってみます（akan saya coba datangi）」, tempat yang paling natural ditanyakan adalah「試着室（kamar pas）」. Lemari es dan jendela bukan tempat yang wajar ditanyakan lokasinya.'
   },
   {
     id: 15,
     dialog: [
-      {s:'A', t:'佐藤さん、いつもどこで服を買いますか。'},
+      {s:'A', t:'<ruby>佐藤<rt>さとう</rt></ruby>さん、いつもどこで<ruby>服<rt>ふく</rt></ruby>を買いますか。'},
       {s:'B', t:'私はよくデパートで買います。'},
       {s:'A', t:'デパートは【BLANK】。'},
       {s:'B', t:'ええ、でも<ruby>質<rt>しつ</rt></ruby>がいいですよ。'}
     ],
-    opts: ['安いですね','高いですね','遠いですね','狭いですね'],
+    opts: ['<ruby>安<rt>やす</rt></ruby>いですね','<ruby>高<rt>たか</rt></ruby>いですね','<ruby>遠<rt>とお</rt></ruby>いですね','<ruby>狭<rt>せま</rt></ruby>いですね'],
     ans: 1,
-    feedback: 'B merespons dengan「でも質がいい（tapi kualitasnya bagus）」yang bersifat membela diri, sehingga A pasti menyebutkan kelemahan (harga). Jawaban「高いですね（mahal ya）」adalah yang paling tepat.'
+    feedback: 'B merespons dengan「でも質がいい（tapi kualitasnya bagus）」yang bersifat membela diri, sehingga A pasti menyebutkan kelemahan (harga). Jawaban「<ruby>高<rt>たか</rt></ruby>いですね（mahal ya）」adalah yang paling tepat.'
   },
   {
     id: 16,
     dialog: [
-      {s:'A', t:'お弁当、温めますか。'},
+      {s:'A', t:'お<ruby>弁当<rt>べんとう</rt></ruby>、<ruby>温<rt>あたた</rt></ruby>めますか。'},
       {s:'B', t:'はい、【BLANK】。'},
-      {s:'A', t:'かしこまりました。少々お待ちください。'}
+      {s:'A', t:'かしこまりました。<ruby>少々<rt>しょうしょう</rt></ruby>お<ruby>待<rt>ま</rt></ruby>ちください。'}
     ],
-    opts: ['お願いします','結構です','食べません','捨ててください'],
+    opts: ['お<ruby>願<rt>ねが</rt></ruby>いします','<ruby>結構<rt>けっこう</rt></ruby>です','食べません','<ruby>捨<rt>す</rt></ruby>ててください'],
     ans: 0,
-    feedback: 'Setelah menjawab「はい（ya）」, B meminta untuk dipanaskan sehingga「お願いします（tolong）」adalah jawaban yang benar.「結構です」adalah cara menolak dengan sopan, jadi biasanya digunakan setelah「いいえ（tidak）」.'
+    feedback: 'Setelah menjawab「はい（ya）」, B meminta untuk dipanaskan sehingga「お<ruby>願<rt>ねが</rt></ruby>いします（tolong）」adalah jawaban yang benar.「<ruby>結構<rt>けっこう</rt></ruby>です」adalah cara menolak dengan sopan, jadi biasanya digunakan setelah「いいえ（tidak）」.'
   },
   {
     id: 17,
     dialog: [
       {s:'A', t:'すみません、このペン、【BLANK】。'},
       {s:'B', t:'はい、どうぞ。使ってください。'},
-      {s:'A', t:'ありがとうございます。すぐ返します。'}
+      {s:'A', t:'ありがとうございます。すぐ<ruby>返<rt>かえ</rt></ruby>します。'}
     ],
-    opts: ['買ってもいいですか','借りてもいいですか','捨ててもいいですか','見せてもいいですか'],
+    opts: ['買ってもいいですか','借りてもいいですか','<ruby>捨<rt>す</rt></ruby>ててもいいですか','見せてもいいですか'],
     ans: 1,
-    feedback: 'Dari kalimat「すぐ返します（akan segera dikembalikan）」, bisa diketahui bahwa A ingin meminjam pena sebentar. Oleh karena itu,「借りてもいいですか（boleh saya pinjam?）」adalah jawaban yang paling tepat.'
+    feedback: 'Dari kalimat「すぐ<ruby>返<rt>かえ</rt></ruby>します（akan segera dikembalikan）」, bisa diketahui bahwa A ingin meminjam pena sebentar. Oleh karena itu,「借りてもいいですか（boleh saya pinjam?）」adalah jawaban yang paling tepat.'
   },
   {
     id: 18,
@@ -665,9 +665,9 @@ const QUESTIONS = [
       {s:'A', t:'<ruby>昨日<rt>きのう</rt></ruby>のパーティーはどうでしたか。'},
       {s:'B', t:'とても【BLANK】ですよ。'},
       {s:'A', t:'そうですか。私も行きたかったです。'},
-      {s:'B', t:'次は一緒に行きましょう。'}
+      {s:'B', t:'<ruby>次<rt>つぎ</rt></ruby>は<ruby>一緒<rt>いっしょ</rt></ruby>に行きましょう。'}
     ],
-    opts: ['静かだった','<ruby>賑やか<rt>にぎやか</rt></ruby>だった','つまらなかった','寒かった'],
+    opts: ['<ruby>静<rt>しず</rt></ruby>かだった','<ruby>賑やか<rt>にぎやか</rt></ruby>だった','つまらなかった','寒かった'],
     ans: 1,
     feedback: 'A mengatakan「私も行きたかった（aku juga ingin pergi）」dengan nada menyesal, sehingga pesta tersebut pasti menyenangkan.「賑やかだった（ramai / meriah）」adalah jawaban yang benar.'
   },
@@ -677,7 +677,7 @@ const QUESTIONS = [
       {s:'A', t:'【BLANK】。'},
       {s:'B', t:'いらっしゃいませ。<ruby>何名様<rt>なんめいさま</rt></ruby>ですか。'},
       {s:'A', t:'二人です。'},
-      {s:'B', t:'では、こちらの席へどうぞ。'}
+      {s:'B', t:'では、こちらの<ruby>席<rt>せき</rt></ruby>へどうぞ。'}
     ],
     opts: ['ごめんください','お<ruby>邪魔<rt>じゃま</rt></ruby>します','こんにちは','<ruby>失礼<rt>しつれい</rt></ruby>します'],
     ans: 0,
@@ -688,21 +688,21 @@ const QUESTIONS = [
     dialog: [
       {s:'A', t:'このカメラ、<ruby>使<rt>つか</rt></ruby>い<ruby>方<rt>かた</rt></ruby>がよくわかりません。'},
       {s:'B', t:'【BLANK】。'},
-      {s:'A', t:'<ruby>本当<rt>ほんとう</rt></ruby>ですか。助かります。お願いします。'}
+      {s:'A', t:'<ruby>本当<rt>ほんとう</rt></ruby>ですか。<ruby>助<rt>たす</rt></ruby>かります。お<ruby>願<rt>ねが</rt></ruby>いします。'}
     ],
-    opts: ['私が教えましょうか','<ruby>難<rt>むずか</rt></ruby>しいですね','捨てましょうか','買いましょうか'],
+    opts: ['私が教えましょうか','<ruby>難<rt>むずか</rt></ruby>しいですね','<ruby>捨<rt>す</rt></ruby>てましょうか','買いましょうか'],
     ans: 0,
-    feedback: 'A merespons dengan「助かります、お願いします（sangat membantu, tolong）」sebagai ungkapan terima kasih, sehingga B pasti menawarkan bantuan. Jawaban「私が教えましょうか（boleh saya ajari?）」adalah yang benar.'
+    feedback: 'A merespons dengan「<ruby>助<rt>たす</rt></ruby>かります、お<ruby>願<rt>ねが</rt></ruby>いします（sangat membantu, tolong）」sebagai ungkapan terima kasih, sehingga B pasti menawarkan bantuan. Jawaban「私が教えましょうか（boleh saya ajari?）」adalah yang benar.'
   },
   {
     id: 21,
     dialog: [
       {s:'A', t:'<ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>に<ruby>牛乳<rt>ぎゅうにゅう</rt></ruby>がありますか。'},
       {s:'B', t:'あ、【BLANK】。'},
-      {s:'A', t:'じゃあ、<ruby>買<rt>か</rt></ruby>い<ruby>物<rt>もの</rt></ruby>に行くときに買ってきますね。'},
-      {s:'B', t:'お願いします。'}
+      {s:'A', t:'じゃあ、<ruby>買い物<rt>かいもの</rt></ruby>に行くときに買ってきますね。'},
+      {s:'B', t:'お<ruby>願<rt>ねが</rt></ruby>いします。'}
     ],
-    opts: ['たくさんありますよ','もうありません','冷たいですよ','白いですよ'],
+    opts: ['たくさんありますよ','もうありません','<ruby>冷<rt>つめ</rt></ruby>たいですよ','白いですよ'],
     ans: 1,
     feedback: 'A mengatakan「買ってきます（akan saya belikan）」, yang berarti susunya sudah habis. Jawaban「もうありません（sudah tidak ada）」adalah yang benar.'
   },
@@ -711,11 +711,11 @@ const QUESTIONS = [
     dialog: [
       {s:'A', t:'すみません、レジ<ruby>袋<rt>ぶくろ</rt></ruby>は<ruby>必要<rt>ひつよう</rt></ruby>ですか。'},
       {s:'B', t:'いいえ、【BLANK】。'},
-      {s:'A', t:'わかりました。では、このままお渡しします。'}
+      {s:'A', t:'わかりました。では、このままお<ruby>渡<rt>わた</rt></ruby>しします。'}
     ],
-    opts: ['お願いします','結構です','あります','ください'],
+    opts: ['お<ruby>願<rt>ねが</rt></ruby>いします','<ruby>結構<rt>けっこう</rt></ruby>です','あります','ください'],
     ans: 1,
-    feedback: 'Karena dimulai dengan「いいえ（tidak）」yang menolak kantong plastik, maka「結構です（tidak perlu / tidak usah）」adalah jawaban yang tepat.「お願いします」dan「ください」adalah ungkapan setuju/meminta, bukan menolak.'
+    feedback: 'Karena dimulai dengan「いいえ（tidak）」yang menolak kantong plastik, maka「<ruby>結構<rt>けっこう</rt></ruby>です（tidak perlu / tidak usah）」adalah jawaban yang tepat.「お<ruby>願<rt>ねが</rt></ruby>いします」dan「ください」adalah ungkapan setuju/meminta, bukan menolak.'
   },
   {
     id: 23,
@@ -723,20 +723,20 @@ const QUESTIONS = [
       {s:'A', t:'田中さん、<ruby>趣味<rt>しゅみ</rt></ruby>は何ですか。'},
       {s:'B', t:'【BLANK】。'},
       {s:'A', t:'へえ、どんな<ruby>料理<rt>りょうり</rt></ruby>を作りますか。'},
-      {s:'B', t:'<ruby>日本<ruby>料理<rt>りょうり</rt></ruby><rt>にほんりょうり</rt></ruby>が多いですね。'}
+      {s:'B', t:'日本<ruby>料理<rt>りょうり</rt></ruby>が多いですね。'}
     ],
-    opts: ['<ruby>料理<rt>りょうり</rt></ruby>を作ることです','食べることです','寝ることです','走ることです'],
+    opts: ['<ruby>料理<rt>りょうり</rt></ruby>を作ることです','食べることです','寝ることです','<ruby>走<rt>はし</rt></ruby>ることです'],
     ans: 0,
-    feedback: 'A menanyakan「どんな<ruby>料理<rt>りょうり</rt></ruby>を作りますか（masakan apa yang kamu buat?）」, sehingga hobi B adalah「<ruby>料理<rt>りょうり</rt></ruby>を作ること（memasak）」. Jika hobinya「食べること（makan）」, maka A seharusnya bertanya「どんな<ruby>料理<rt>りょうり</rt></ruby>が好きですか」.'
+    feedback: 'A menanyakan「どんな<ruby>料理<rt>りょうり</rt></ruby>を作りますか（masakan apa yang kamu buat?）」, sehingga hobi B adalah「料理を作ること（memasak）」. Jika hobinya「食べること（makan）」, maka A seharusnya bertanya「どんな料理が好きですか」.'
   },
   {
     id: 24,
     dialog: [
-      {s:'A', t:'あ、雨が降ってきましたよ。'},
+      {s:'A', t:'あ、雨が<ruby>降<rt>ふ</rt></ruby>ってきましたよ。'},
       {s:'B', t:'<ruby>本当<rt>ほんとう</rt></ruby>ですね。【BLANK】。'},
-      {s:'A', t:'ええ、そうしましょう。タクシーを呼びますね。'}
+      {s:'A', t:'ええ、そうしましょう。タクシーを<ruby>呼<rt>よ</rt></ruby>びますね。'}
     ],
-    opts: ['<ruby>急<rt>いそ</rt></ruby>いで帰りましょう','<ruby>散歩<rt>さんぽ</rt></ruby>しましょう','傘を捨てましょう','遊びましょう'],
+    opts: ['<ruby>急<rt>いそ</rt></ruby>いで帰りましょう','<ruby>散歩<rt>さんぽ</rt></ruby>しましょう','<ruby>傘<rt>かさ</rt></ruby>を<ruby>捨<rt>す</rt></ruby>てましょう','遊びましょう'],
     ans: 0,
     feedback: 'A mengatakan「タクシーを呼びます（akan memanggil taksi）」, menunjukkan mereka terburu-buru untuk pulang. Jawaban「<ruby>急<rt>いそ</rt></ruby>いで帰りましょう（ayo cepat pulang）」adalah yang paling tepat.'
   },
@@ -745,9 +745,9 @@ const QUESTIONS = [
     dialog: [
       {s:'A', t:'このパソコン、【BLANK】。'},
       {s:'B', t:'ええ、<ruby>最新<rt>さいしん</rt></ruby>のモデルですから。'},
-      {s:'A', t:'そうですか。でも、ちょっと高すぎますね。'}
+      {s:'A', t:'そうですか。でも、ちょっと<ruby>高<rt>たか</rt></ruby>すぎますね。'}
     ],
-    opts: ['<ruby>便利<rt>べんり</rt></ruby>そうですね','古そうですね','重そうですね','悪そうですね'],
+    opts: ['<ruby>便利<rt>べんり</rt></ruby>そうですね','<ruby>古<rt>ふる</rt></ruby>そうですね','<ruby>重<rt>おも</rt></ruby>そうですね','<ruby>悪<rt>わる</rt></ruby>そうですね'],
     ans: 0,
     feedback: 'B menjelaskan bahwa laptop ini adalah「<ruby>最新<rt>さいしん</rt></ruby>モデル（model terbaru）」dan A menganggapnya「高い（mahal）」, sehingga penilaian A terhadap laptop seharusnya positif. Jawaban「<ruby>便利<rt>べんり</rt></ruby>そうですね（tampaknya praktis ya）」adalah yang benar.'
   },
@@ -755,8 +755,8 @@ const QUESTIONS = [
   {
     id: 26,
     dialog: [
-      {s:'田中', t:'<ruby>先生<rt>せんせい</rt></ruby>、<ruby>昨日<rt>きのう</rt></ruby>お<ruby>電話<rt>でんわ</rt></ruby>しましたが、いらっしゃいませんでした。'},
-      {s:'<ruby>先生<rt>せんせい</rt></ruby>', t:'ああ、<ruby>昨日<rt>きのう</rt></ruby>は<ruby>午後<rt>ごご</rt></ruby>から<ruby>出張<rt>しゅっちょう</rt></ruby>で、<ruby>大学<rt>だいがく</rt></ruby>には【BLANK】。'},
+      {s:'田中', t:'先生、<ruby>昨日<rt>きのう</rt></ruby>お<ruby>電話<rt>でんわ</rt></ruby>しましたが、いらっしゃいませんでした。'},
+      {s:'先生', t:'ああ、<ruby>昨日<rt>きのう</rt></ruby>は午後から<ruby>出張<rt>しゅっちょう</rt></ruby>で、大学には【BLANK】。'},
       {s:'田中', t:'そうだったんですか。<ruby>失礼<rt>しつれい</rt></ruby>いたしました。'}
     ],
     opts: ['おりませんでした','いらっしゃいませんでした','まいりませんでした','おいでになりませんでした'],
@@ -767,8 +767,8 @@ const QUESTIONS = [
     id: 27,
     dialog: [
       {s:'客', t:'すみません、このパンフレットを【BLANK】か。'},
-      {s:'店員', t:'はい、どうぞ。ご<ruby>自由<rt>じゆう</rt></ruby>にお持ちください。'},
-      {s:'客', t:'ありがとうございます。<ruby>友達<rt>ともだち</rt></ruby>の<ruby>分<rt>ぶん</rt></ruby>ももらってもいいですか。'}
+      {s:'店員', t:'はい、どうぞ。ご<ruby>自由<rt>じゆう</rt></ruby>にお<ruby>持<rt>も</rt></ruby>ちください。'},
+      {s:'客', t:'ありがとうございます。<ruby>友達<rt>ともだち</rt></ruby>の分ももらってもいいですか。'}
     ],
     opts: ['いただいてもよろしいです','もらってもよろしいです','いただいてもいいですか','<ruby>頂戴<rt>ちょうだい</rt></ruby>してもよろしいです'],
     ans: 2,
@@ -777,9 +777,9 @@ const QUESTIONS = [
   {
     id: 28,
     dialog: [
-      {s:'<ruby>後輩<rt>こうはい</rt></ruby>', t:'<ruby>先輩<rt>せんぱい</rt></ruby>、<ruby>最<rt>もっと</rt></ruby>近あまり眠れないんです。どうすればいいでしょうか。'},
-      {s:'<ruby>先輩<rt>せんぱい</rt></ruby>', t:'あまり<ruby>無理<rt>むり</rt></ruby>を【BLANK】。<ruby>今日<rt>きょう</rt></ruby>は早く<ruby>帰<rt>かえ</rt></ruby>って<ruby>休<rt>やす</rt></ruby>んだほうがいいですよ。'},
-      {s:'<ruby>後輩<rt>こうはい</rt></ruby>', t:'わかりました。そうします。'}
+      {s:'後輩', t:'<ruby>先輩<rt>せんぱい</rt></ruby>、<ruby>最近<rt>さいきん</rt></ruby>あまり<ruby>眠<rt>ねむ</rt></ruby>れないんです。どうすればいいでしょうか。'},
+      {s:'先輩', t:'あまり<ruby>無理<rt>むり</rt></ruby>を【BLANK】。今日は<ruby>早<rt>はや</rt></ruby>く帰って<ruby>休<rt>やす</rt></ruby>んだほうがいいですよ。'},
+      {s:'後輩', t:'わかりました。そうします。'}
     ],
     opts: ['しないほうがいいですよ','したほうがいいですよ','しなければなりません','してもいいですよ'],
     ans: 0,
@@ -789,19 +789,19 @@ const QUESTIONS = [
     id: 29,
     dialog: [
       {s:'社員', t:'<ruby>部長<rt>ぶちょう</rt></ruby>、明日の<ruby>会議<rt>かいぎ</rt></ruby>の<ruby>資料<rt>しりょう</rt></ruby>を【BLANK】か。'},
-      {s:'<ruby>部長<rt>ぶちょう</rt></ruby>', t:'ええ、見せてください。よくできていますね。'},
-      {s:'社員', t:'ありがとうございます。安心しました。'}
+      {s:'部長', t:'ええ、見せてください。よくできていますね。'},
+      {s:'社員', t:'ありがとうございます。<ruby>安心<rt>あんしん</rt></ruby>しました。'}
     ],
-    opts: ['ご覧になります','お<ruby>目<rt>め</rt></ruby>にかけます','お見せします','<ruby>拝見<rt>はいけん</rt></ruby>します'],
+    opts: ['ご<ruby>覧<rt>らん</rt></ruby>になります','お<ruby>目<rt>め</rt></ruby>にかけます','お見せします','<ruby>拝見<rt>はいけん</rt></ruby>します'],
     ans: 1,
     feedback: 'Karena karyawan menunjukkan dokumen kepada atasan (<ruby>部長<rt>ぶちょう</rt></ruby>), harus menggunakan kenjōgo (bentuk rendah diri) untuk tindakan "memperlihatkan".「お目にかける（memperlihatkan dengan hormat）」adalah jawaban yang benar dan paling sopan.「ご覧になる」adalah sonkeigo (bentuk hormat) untuk saat atasan yang melihat.「お見せする」juga bisa, tapi「お目にかける」lebih formal.「拝見する」digunakan saat diri sendiri yang "melihat".'
   },
   {
     id: 30,
     dialog: [
-      {s:'学生', t:'<ruby>先生<rt>せんせい</rt></ruby>、この<ruby>辞書<rt>じしょ</rt></ruby>を明日まで【BLANK】か。'},
-      {s:'<ruby>先生<rt>せんせい</rt></ruby>', t:'いいですよ。でも、明日の<ruby>授業<rt>じゅぎょう</rt></ruby>で使うから忘れないでね。'},
-      {s:'学生', t:'はい、必ず<ruby>持<rt>も</rt></ruby>ってきます。'}
+      {s:'学生', t:'先生、この<ruby>辞書<rt>じしょ</rt></ruby>を明日まで【BLANK】か。'},
+      {s:'先生', t:'いいですよ。でも、明日の<ruby>授業<rt>じゅぎょう</rt></ruby>で<ruby>使<rt>つか</rt></ruby>うから<ruby>忘<rt>わす</rt></ruby>れないでね。'},
+      {s:'学生', t:'はい、<ruby>必<rt>かなら</rt></ruby>ず<ruby>持<rt>も</rt></ruby>ってきます。'}
     ],
     opts: ['借りてもいいです','お借りしてもよろしいです','貸してもよろしいです','<ruby>拝借<rt>はいしゃく</rt></ruby>してもよろしいです'],
     ans: 1,
@@ -811,76 +811,76 @@ const QUESTIONS = [
     id: 31,
     dialog: [
       {s:'店員', t:'いらっしゃいませ。<ruby>何名様<rt>なんめいさま</rt></ruby>でしょうか。'},
-      {s:'客', t:'二人です。静かな席に【BLANK】か。'},
-      {s:'店員', t:'はい、<ruby>奥<rt>おく</rt></ruby>の<ruby>窓側<rt>まどがわ</rt></ruby>の席が<ruby>空<rt>あ</rt></ruby>いております。どうぞ。'}
+      {s:'客', t:'二人です。<ruby>静<rt>しず</rt></ruby>かな<ruby>席<rt>せき</rt></ruby>に【BLANK】か。'},
+      {s:'店員', t:'はい、<ruby>奥<rt>おく</rt></ruby>の<ruby>窓側<rt>まどがわ</rt></ruby>の<ruby>席<rt>せき</rt></ruby>が<ruby>空<rt>あ</rt></ruby>いております。どうぞ。'}
     ],
-    opts: ['座ってもいいです','お座りになってもいいです','座らせていただいてもよろしいです','座ってはいけません'],
+    opts: ['<ruby>座<rt>すわ</rt></ruby>ってもいいです','お<ruby>座<rt>すわ</rt></ruby>りになってもいいです','<ruby>座<rt>すわ</rt></ruby>らせていただいてもよろしいです','<ruby>座<rt>すわ</rt></ruby>ってはいけません'],
     ans: 2,
-    feedback: 'Pelanggan meminta izin kepada pelayan dengan sopan untuk duduk.「座らせていただいてもよろしいですか（boleh saya duduk di sini?）」adalah yang paling sopan dan tepat.「お座りになる」adalah sonkeigo (bentuk hormat untuk orang lain), tidak boleh digunakan untuk tindakan diri sendiri.'
+    feedback: 'Pelanggan meminta izin kepada pelayan dengan sopan untuk duduk.「<ruby>座<rt>すわ</rt></ruby>らせていただいてもよろしいですか（boleh saya duduk di sini?）」adalah yang paling sopan dan tepat.「お座りになる」adalah sonkeigo (bentuk hormat untuk orang lain), tidak boleh digunakan untuk tindakan diri sendiri.'
   },
   {
     id: 32,
     dialog: [
       {s:'母', t:'<ruby>風邪<rt>かぜ</rt></ruby>をひいたみたいね。<ruby>熱<rt>ねつ</rt></ruby>があるんじゃない？'},
-      {s:'子', t:'うん、ちょっと<ruby>頭<rt>あたま</rt></ruby>が痛いんだ。'},
-      {s:'母', t:'じゃあ、<ruby>今日<rt>きょう</rt></ruby>はお風呂に【BLANK】。すぐ寝なさい。'}
+      {s:'子', t:'うん、ちょっと<ruby>頭<rt>あたま</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>いんだ。'},
+      {s:'母', t:'じゃあ、今日はお<ruby>風呂<rt>ふろ</rt></ruby>に【BLANK】。すぐ寝なさい。'}
     ],
-    opts: ['入ったほうがいいわよ','入らないほうがいいわよ','入らなくてもいいわよ','入ってもいいわよ'],
+    opts: ['<ruby>入<rt>はい</rt></ruby>ったほうがいいわよ','<ruby>入<rt>はい</rt></ruby>らないほうがいいわよ','<ruby>入<rt>はい</rt></ruby>らなくてもいいわよ','<ruby>入<rt>はい</rt></ruby>ってもいいわよ'],
     ans: 1,
-    feedback: 'Saat sakit dan demam, mandi justru tidak disarankan. Oleh karena itu「入らないほうがいいわよ（sebaiknya tidak mandi）」adalah jawaban yang benar. Hal ini juga konsisten dengan kalimat berikutnya「すぐ寝なさい（langsung tidur）」.'
+    feedback: 'Saat sakit dan demam, mandi justru tidak disarankan. Oleh karena itu「<ruby>入<rt>はい</rt></ruby>らないほうがいいわよ（sebaiknya tidak mandi）」adalah jawaban yang benar. Hal ini juga konsisten dengan kalimat berikutnya「すぐ寝なさい（langsung tidur）」.'
   },
   {
     id: 33,
     dialog: [
-      {s:'<ruby>受付<rt>うけつけ</rt></ruby>', t:'お<ruby>名前<rt>なまえ</rt></ruby>を【BLANK】か。'},
-      {s:'客', t:'田中と申します。3時に<ruby>予約<rt>よやく</rt></ruby>しております。'},
-      {s:'<ruby>受付<rt>うけつけ</rt></ruby>', t:'田中様ですね。お待ちしておりました。'}
+      {s:'受付', t:'お<ruby>名前<rt>なまえ</rt></ruby>を【BLANK】か。'},
+      {s:'客', t:'田中と<ruby>申<rt>もう</rt></ruby>します。3時に<ruby>予約<rt>よやく</rt></ruby>しております。'},
+      {s:'受付', t:'田中<ruby>様<rt>さま</rt></ruby>ですね。お<ruby>待<rt>ま</rt></ruby>ちしておりました。'}
     ],
-    opts: ['おっしゃっていただけます','<ruby>伺<rt>うかが</rt></ruby>ってもよろしいです','おっしゃいます','お聞きしてもよろしいです'],
+    opts: ['おっしゃっていただけます','<ruby>伺<rt>うかが</rt></ruby>ってもよろしいです','おっしゃいます','お<ruby>聞<rt>き</rt></ruby>きしてもよろしいです'],
     ans: 3,
-    feedback: 'Petugas resepsionis (pihak sendiri) menanyakan nama kepada tamu, sehingga harus menggunakan kenjōgo (bentuk rendah diri) untuk tindakan "bertanya".「お聞きしてもよろしいですか（boleh saya tanyakan?）」adalah yang benar.「おっしゃる」adalah sonkeigo untuk saat lawan bicara yang berbicara, bukan untuk diri sendiri.'
+    feedback: 'Petugas resepsionis (pihak sendiri) menanyakan nama kepada tamu, sehingga harus menggunakan kenjōgo (bentuk rendah diri) untuk tindakan "bertanya".「お<ruby>聞<rt>き</rt></ruby>きしてもよろしいですか（boleh saya tanyakan?）」adalah yang benar.「おっしゃる」adalah sonkeigo untuk saat lawan bicara yang berbicara, bukan untuk diri sendiri.'
   },
   {
     id: 34,
     dialog: [
-      {s:'友人A', t:'日本語のスピーチ、自信がないんだ。'},
-      {s:'友人B', t:'<ruby>練習<rt>れんしゅう</rt></ruby>のとき、<ruby>先生<rt>せんせい</rt></ruby>に一度【BLANK】ほうがいいよ。'},
-      {s:'友人A', t:'そうだね。明日お願いしてみるよ。'}
+      {s:'友人A', t:'日本語のスピーチ、<ruby>自信<rt>じしん</rt></ruby>がないんだ。'},
+      {s:'友人B', t:'<ruby>練習<rt>れんしゅう</rt></ruby>のとき、先生に<ruby>一度<rt>いちど</rt></ruby>【BLANK】ほうがいいよ。'},
+      {s:'友人A', t:'そうだね。明日お<ruby>願<rt>ねが</rt></ruby>いしてみるよ。'}
     ],
-    opts: ['見ていただいた','見てさしあげた','見てくれた','見せた'],
+    opts: ['<ruby>見<rt>み</rt></ruby>ていただいた','<ruby>見<rt>み</rt></ruby>てさしあげた','<ruby>見<rt>み</rt></ruby>てくれた','<ruby>見<rt>み</rt></ruby>せた'],
     ans: 0,
-    feedback: 'Karena meminta guru (目上/orang yang lebih tinggi) untuk melihat/menilai pidato, harus menggunakan kenjōgo「見ていただく（minta tolong diperhatikan dengan hormat）」. Jawaban yang benar adalah「見ていただいた（bentuk ~た）」.「見てさしあげる」berarti diri sendiri yang melakukan sesuatu untuk orang lain, maknanya terbalik.'
+    feedback: 'Karena meminta guru (目上/orang yang lebih tinggi) untuk melihat/menilai pidato, harus menggunakan kenjōgo「見ていただく（minta tolong diperhatikan dengan hormat）」. Jawaban yang benar adalah「<ruby>見<rt>み</rt></ruby>ていただいた（bentuk ~た）」.「見てさしあげる」berarti diri sendiri yang melakukan sesuatu untuk orang lain, maknanya terbalik.'
   },
   {
     id: 35,
     dialog: [
-      {s:'課長', t:'佐藤さん、明日のパーティーには【BLANK】か。'},
-      {s:'佐藤', t:'はい、<ruby>伺<rt>うかが</rt></ruby>うつもりです。楽しみにしております。'},
+      {s:'課長', t:'<ruby>佐藤<rt>さとう</rt></ruby>さん、明日のパーティーには【BLANK】か。'},
+      {s:'佐藤', t:'はい、<ruby>伺<rt>うかが</rt></ruby>うつもりです。<ruby>楽<rt>たの</rt></ruby>しみにしております。'},
       {s:'課長', t:'それはよかったです。では、<ruby>会場<rt>かいじょう</rt></ruby>で会いましょう。'}
     ],
-    opts: ['まいります','いらっしゃいます','おいでします','伺います'],
+    opts: ['まいります','いらっしゃいます','おいでします','<ruby>伺<rt>うかが</rt></ruby>います'],
     ans: 3,
     feedback: 'Dalam percakapan ini,<ruby>課長<rt>かちょう</rt></ruby> (kepala divisi) menanyakan apakah Satou akan datang ke pesta. Karena Satou adalah bawahan, <ruby>課長<rt>かちょう</rt></ruby> menggunakan sonkeigo (bentuk hormat) untuk menanyakan tindakan Satou.「いらっしゃいますか（apakah Anda akan hadir?）」adalah pilihan yang paling tepat dari opsi yang tersedia. Satou sendiri kemudian merespons dengan「伺うつもりです」menggunakan kenjōgo.'
   },
   {
     id: 36,
     dialog: [
-      {s:'学生', t:'<ruby>先生<rt>せんせい</rt></ruby>、この<ruby>文法<rt>ぶんぽう</rt></ruby>がよくわからないのですが、【BLANK】か。'},
-      {s:'<ruby>先生<rt>せんせい</rt></ruby>', t:'ええ、いいですよ。どこがわかりませんか。'},
+      {s:'学生', t:'先生、この<ruby>文法<rt>ぶんぽう</rt></ruby>がよくわからないのですが、【BLANK】か。'},
+      {s:'先生', t:'ええ、いいですよ。どこがわかりませんか。'},
       {s:'学生', t:'この「ことになっている」の<ruby>使<rt>つか</rt></ruby>い<ruby>方<rt>かた</rt></ruby>が<ruby>難<rt>むずか</rt></ruby>しいです。'}
     ],
-    opts: ['教えていただいてもよろしいです','教えてさしあげてもいいです','教えてくださってもいいです','教えてもらえますか'],
+    opts: ['<ruby>教<rt>おし</rt></ruby>えていただいてもよろしいです','<ruby>教<rt>おし</rt></ruby>えてさしあげてもいいです','<ruby>教<rt>おし</rt></ruby>えてくださってもいいです','<ruby>教<rt>おし</rt></ruby>えてもらえますか'],
     ans: 0,
-    feedback: 'Murid meminta guru untuk mengajarinya secara sopan, sehingga harus menggunakan kenjōgo.「教えていただいてもよろしいですか（boleh saya minta tolong diajarkan?）」adalah jawaban yang benar.「教えてさしあげる」berarti diri sendiri yang mengajari orang lain, maknanya terbalik.「教えてくださる」adalah sonkeigo yang berarti guru yang memilih untuk mengajar, bukan permintaan murid.'
+    feedback: 'Murid meminta guru untuk mengajarinya secara sopan, sehingga harus menggunakan kenjōgo.「<ruby>教<rt>おし</rt></ruby>えていただいてもよろしいですか（boleh saya minta tolong diajarkan?）」adalah jawaban yang benar.「教えてさしあげる」berarti diri sendiri yang mengajari orang lain, maknanya terbalik.「教えてくださる」adalah sonkeigo yang berarti guru yang memilih untuk mengajar, bukan permintaan murid.'
   },
   {
     id: 37,
     dialog: [
-      {s:'<ruby>医者<rt>いしゃ</rt></ruby>', t:'<ruby>最<rt>もっと</rt></ruby>近、お酒をたくさん飲んでいますか。'},
-      {s:'<ruby>患者<rt>かんじゃ</rt></ruby>', t:'はい、<ruby>仕事<rt>しごと</rt></ruby>の後に毎日飲んでいます。'},
-      {s:'<ruby>医者<rt>いしゃ</rt></ruby>', t:'<ruby>健康<rt>けんこう</rt></ruby>のために、少し【BLANK】ほうがいいですよ。'}
+      {s:'医者', t:'<ruby>最近<rt>さいきん</rt></ruby>、お<ruby>酒<rt>さけ</rt></ruby>をたくさん飲んでいますかたくさん飲んでいますか。'},
+      {s:'患者', t:'はい、<ruby>仕事<rt>しごと</rt></ruby>の後に<ruby>毎日<rt>まいにち</rt></ruby>飲んでいます。'},
+      {s:'医者', t:'<ruby>健康<rt>けんこう</rt></ruby>のために、少し【BLANK】ほうがいいですよ。'}
     ],
-    opts: ['飲んだ','<ruby>控<rt>ひか</rt></ruby>えた','やめる','飲みすぎた'],
+    opts: ['飲んだ','<ruby>控<rt>ひか</rt></ruby>えた','やめる','<ruby>飲<rt>の</rt></ruby>みすぎた'],
     ans: 1,
     feedback: 'Pola「〜ほうがいい」harus didahului oleh bentuk lampau (た形) dari kata kerja. Untuk tujuan kesehatan, kata「控えた（mengurangi）」adalah yang tepat artinya.「控える」berarti mengurangi frekuensi atau jumlah sesuatu.'
   },
@@ -888,30 +888,30 @@ const QUESTIONS = [
     id: 38,
     dialog: [
       {s:'社員A', t:'あ、<ruby>社長<rt>しゃちょう</rt></ruby>がいらっしゃいましたよ。'},
-      {s:'社員B', t:'<ruby>本当<rt>ほんとう</rt></ruby>だ。あちらで誰かと【BLANK】ね。'},
-      {s:'社員A', t:'あの方は<ruby>新<rt>あたら</rt></ruby>しいお<ruby>客様<rt>きゃくさま</rt></ruby>でしょうか。'}
+      {s:'社員B', t:'<ruby>本当<rt>ほんとう</rt></ruby>だ。あちらで<ruby>誰<rt>だれ</rt></ruby>かと【BLANK】ね。'},
+      {s:'社員A', t:'あの<ruby>方<rt>かた</rt></ruby>は新しいお<ruby>客様<rt>きゃくさま</rt></ruby>でしょうか。'}
     ],
-    opts: ['お話ししています','お話しになっています','お話しされています','お話しいたしています'],
+    opts: ['お<ruby>話<rt>はなし</rt></ruby>ししています','お<ruby>話<rt>はなし</rt></ruby>しになっています','お<ruby>話<rt>はなし</rt></ruby>しされています','お<ruby>話<rt>はなし</rt></ruby>しいたしています'],
     ans: 1,
-    feedback: '<ruby>社長<rt>しゃちょう</rt></ruby>（目上）の動作を描写するので尊敬語が<ruby>必要<rt>ひつよう</rt></ruby>。「お話しになっています」が正解。「お話しされています」は二重敬語になります。「お話しいたす」は謙譲語です。'
+    feedback: '社長（目上）の動作を描写するので尊敬語が必要。「お<ruby>話<rt>はなし</rt></ruby>しになっています」が正解。「お<ruby>話<rt>はなし</rt></ruby>しされています」は二重敬語になります。「お話しいたす」は謙譲語です。'
   },
   {
     id: 39,
     dialog: [
       {s:'客', t:'すみません、ここで<ruby>写真<rt>しゃしん</rt></ruby>を【BLANK】か。'},
-      {s:'店員', t:'申し訳ありません。<ruby>館内<rt>かんない</rt></ruby>での<ruby>撮影<rt>さつえい</rt></ruby>はご<ruby>遠慮<rt>えんりょ</rt></ruby>ください。'},
+      {s:'店員', t:'<ruby>申<rt>もう</rt></ruby>し<ruby>訳<rt>わけ</rt></ruby>ありません。<ruby>館内<rt>かんない</rt></ruby>での<ruby>撮影<rt>さつえい</rt></ruby>はご<ruby>遠慮<rt>えんりょ</rt></ruby>ください。'},
       {s:'客', t:'あ、そうですか。わかりました。'}
     ],
-    opts: ['撮ってもいいです','撮らせていただいてもよろしいです','撮らなければなりません','撮ってもかまいません'],
+    opts: ['<ruby>撮<rt>と</rt></ruby>ってもいいです','<ruby>撮<rt>と</rt></ruby>らせていただいてもよろしいです','<ruby>撮<rt>と</rt></ruby>らなければなりません','<ruby>撮<rt>と</rt></ruby>ってもかまいません'],
     ans: 1,
-    feedback: '客が店員に<ruby>撮影<rt>さつえい</rt></ruby>の許可を丁寧に求めているので「撮らせていただいてもよろしいですか」が正解。「いただく」は謙譲語で<ruby>適切<rt>てきせつ</rt></ruby>な敬語表現です。'
+    feedback: '客が店員に撮影の許可を丁寧に求めているので「<ruby>撮<rt>と</rt></ruby>らせていただいてもよろしいですか」が正解。「いただく」は謙譲語で適切な敬語表現です。'
   },
   {
     id: 40,
     dialog: [
-      {s:'<ruby>先輩<rt>せんぱい</rt></ruby>', t:'パソコンの<ruby>調子<rt>ちょうし</rt></ruby>が悪いみたいだね。'},
-      {s:'<ruby>後輩<rt>こうはい</rt></ruby>', t:'はい、急に動かなくなってしまって…。'},
-      {s:'<ruby>先輩<rt>せんぱい</rt></ruby>', t:'一度、<ruby>電源<rt>でんげん</rt></ruby>を【BLANK】ほうがいいよ。直るかもしれないから。'}
+      {s:'先輩', t:'パソコンの<ruby>調子<rt>ちょうし</rt></ruby>が<ruby>悪<rt>わる</rt></ruby>いみたいだね。'},
+      {s:'後輩', t:'はい、<ruby>急<rt>きゅう</rt></ruby>に<ruby>動<rt>うご</rt></ruby>かなくなってしまって…。'},
+      {s:'先輩', t:'<ruby>一度<rt>いちど</rt></ruby>、<ruby>電源<rt>でんげん</rt></ruby>を【BLANK】ほうがいいよ。<ruby>直<rt>なお</rt></ruby>るかもしれないから。'}
     ],
     opts: ['切った','切らない','切る','切って'],
     ans: 0,
@@ -920,18 +920,18 @@ const QUESTIONS = [
   {
     id: 41,
     dialog: [
-      {s:'社員', t:'<ruby>部長<rt>ぶちょう</rt></ruby>、お<ruby>荷物<rt>にもつ</rt></ruby>が重そうですね。【BLANK】か。'},
-      {s:'<ruby>部長<rt>ぶちょう</rt></ruby>', t:'ああ、ありがとう。助かるよ。'},
-      {s:'社員', t:'いいえ、お安い<ruby>御用<rt>ごよう</rt></ruby>です。'}
+      {s:'社員', t:'<ruby>部長<rt>ぶちょう</rt></ruby>、お<ruby>荷物<rt>にもつ</rt></ruby>が<ruby>重<rt>おも</rt></ruby>そうですね。【BLANK】か。'},
+      {s:'部長', t:'ああ、ありがとう。<ruby>助<rt>たす</rt></ruby>かるよ。'},
+      {s:'社員', t:'いいえ、お<ruby>安<rt>やす</rt></ruby>い<ruby>御用<rt>ごよう</rt></ruby>です。'}
     ],
-    opts: ['お持ちしましょう','お持ちになります','<ruby>持<rt>も</rt></ruby>ってください','お持ちください'],
+    opts: ['お<ruby>持<rt>も</rt></ruby>ちしましょう','お<ruby>持<rt>も</rt></ruby>ちになります','<ruby>持<rt>も</rt></ruby>ってください','お<ruby>持<rt>も</rt></ruby>ちください'],
     ans: 0,
-    feedback: '社員が<ruby>部長<rt>ぶちょう</rt></ruby>の<ruby>荷物<rt>にもつ</rt></ruby>を「持つ」申し出をするので、謙譲語「お持ちする」が正解。「お持ちになる」は尊敬語（相手が持つ場合）。「お持ちください」は相手への依頼です。'
+    feedback: '社員が<ruby>部長<rt>ぶちょう</rt></ruby>の荷物を「持つ」申し出をするので、謙譲語「お持ちする」が正解。「お持ちになる」は尊敬語（相手が持つ場合）。「お<ruby>持<rt>も</rt></ruby>ちください」は相手への依頼です。'
   },
   {
     id: 42,
     dialog: [
-      {s:'友人A', t:'雨が降ってきたね。<ruby>傘<rt>かさ</rt></ruby>、<ruby>持<rt>も</rt></ruby>ってる？'},
+      {s:'友人A', t:'雨が<ruby>降<rt>ふ</rt></ruby>ってきたね。<ruby>傘<rt>かさ</rt></ruby>、<ruby>持<rt>も</rt></ruby>ってる？'},
       {s:'友人B', t:'ううん、<ruby>持<rt>も</rt></ruby>ってない。どうしよう。'},
       {s:'友人A', t:'<ruby>駅<rt>えき</rt></ruby>まで私の<ruby>傘<rt>かさ</rt></ruby>に【BLANK】ほうがいいよ。<ruby>濡<rt>ぬ</rt></ruby>れちゃうから。'}
     ],
@@ -942,13 +942,13 @@ const QUESTIONS = [
   {
     id: 43,
     dialog: [
-      {s:'学生', t:'<ruby>先生<rt>せんせい</rt></ruby>、<ruby>研究室<rt>けんきゅうしつ</rt></ruby>に【BLANK】か。'},
-      {s:'<ruby>先生<rt>せんせい</rt></ruby>', t:'はい、どうぞ。入ってください。'},
-      {s:'学生', t:'<ruby>失礼<rt>しつれい</rt></ruby>いたします。<ruby>昨日<rt>きのう</rt></ruby>お話しした件ですが…。'}
+      {s:'学生', t:'先生、<ruby>研究室<rt>けんきゅうしつ</rt></ruby>に【BLANK】か。'},
+      {s:'先生', t:'はい、どうぞ。入ってください。'},
+      {s:'学生', t:'<ruby>失礼<rt>しつれい</rt></ruby>いたします。<ruby>昨日<rt>きのう</rt></ruby>お<ruby>話<rt>はなし</rt></ruby>しした<ruby>件<rt>けん</rt></ruby>ですが…。'}
     ],
     opts: ['入ってもいいです','入らせていただいてもよろしいです','お入りになってもいいです','入ってもよろしいです'],
     ans: 1,
-    feedback: '学生が<ruby>先生<rt>せんせい</rt></ruby>に<ruby>研究室<rt>けんきゅうしつ</rt></ruby>へ入る許可を丁寧に求めているので「入らせていただいてもよろしいですか」が正解。「お入りになる」は尊敬語（<ruby>先生<rt>せんせい</rt></ruby>が入る場合）で不<ruby>適切<rt>てきせつ</rt></ruby>。'
+    feedback: '学生が先生に研究室へ入る許可を丁寧に求めているので「入らせていただいてもよろしいですか」が正解。「お入りになる」は尊敬語（先生が入る場合）で不適切。'
   },
   {
     id: 44,
@@ -957,42 +957,42 @@ const QUESTIONS = [
       {s:'客', t:'いいえ、【BLANK】。'},
       {s:'店員', t:'かしこまりました。<ruby>袋<rt>ふくろ</rt></ruby>にお入れしますね。'}
     ],
-    opts: ['持ち帰ります','お持ち帰りになります','持ち帰らせていただきます','持ち<ruby>帰<rt>かえ</rt></ruby>ってください'],
+    opts: ['<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>ります','お<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>りになります','<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>らせていただきます','<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>ってください'],
     ans: 0,
-    feedback: '客が自<ruby>分<rt>ぶん</rt></ruby>のことを言うので通常形「持ち帰ります」が<ruby>最<rt>もっと</rt></ruby>も自然。「お持ち帰りになります」は尊敬語で自<ruby>分<rt>ぶん</rt></ruby>には使いません。「持ち帰らせていただきます」は少し過剰ですが<ruby>文法<rt>ぶんぽう</rt></ruby>的には可。'
+    feedback: '客が自分のことを言うので通常形「<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>ります」が最も自然。「お持ち<ruby>帰<rt>かえ</rt></ruby>りになります」は尊敬語で自分には使いません。「<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>らせていただきます」は少し過剰ですが文法的には可。'
   },
   {
     id: 45,
     dialog: [
       {s:'母', t:'<ruby>宿題<rt>しゅくだい</rt></ruby>、もう終わったの？'},
-      {s:'子', t:'まだ。後でやるよ。'},
+      {s:'子', t:'まだ。<ruby>後<rt>あと</rt></ruby>でやるよ。'},
       {s:'母', t:'先に【BLANK】ほうがいいわよ。後だと<ruby>眠<rt>ねむ</rt></ruby>くなるでしょ。'}
     ],
     opts: ['やった','やらない','やる','やって'],
     ans: 0,
-    feedback: '「〜ほうがいい」の前は動詞のた形（過去形）が来ます。「やったほうがいいわよ」が正解。親が子に勧めている日常的な<ruby>会話<rt>かいわ</rt></ruby>です。'
+    feedback: '「〜ほうがいい」の前は動詞のた形（過去形）が来ます。「やったほうがいいわよ」が正解。親が子に勧めている日常的な会話です。'
   },
   {
     id: 46,
     dialog: [
       {s:'<ruby>秘書<rt>ひしょ</rt></ruby>', t:'<ruby>社長<rt>しゃちょう</rt></ruby>、お<ruby>客様<rt>きゃくさま</rt></ruby>が【BLANK】。'},
-      {s:'<ruby>社長<rt>しゃちょう</rt></ruby>', t:'ああ、すぐに行きます。<ruby>応接室<rt>おうせつしつ</rt></ruby>にご案内して。'},
+      {s:'社長', t:'ああ、すぐに行きます。<ruby>応接室<rt>おうせつしつ</rt></ruby>にご<ruby>案内<rt>あんない</rt></ruby>して。'},
       {s:'<ruby>秘書<rt>ひしょ</rt></ruby>', t:'かしこまりました。'}
     ],
-    opts: ['まいりました','お見えになりました','伺いました','拝見しました'],
+    opts: ['まいりました','お<ruby>見<rt>み</rt></ruby>えになりました','<ruby>伺<rt>うかが</rt></ruby>いました','<ruby>拝見<rt>はいけん</rt></ruby>しました'],
     ans: 1,
-    feedback: 'お<ruby>客様<rt>きゃくさま</rt></ruby>（外部の人）が来たことを<ruby>社長<rt>しゃちょう</rt></ruby>に伝えるので、お<ruby>客様<rt>きゃくさま</rt></ruby>に対する尊敬語「お見えになる」が正解。「まいる」は謙譲語（自<ruby>分<rt>ぶん</rt></ruby>が行く場合）。「伺う」も謙譲語で不<ruby>適切<rt>てきせつ</rt></ruby>。'
+    feedback: 'お客様（外部の人）が来たことを社長に伝えるので、お客様に対する尊敬語「お見えになる」が正解。「まいる」は謙譲語（自分が行く場合）。「伺う」も謙譲語で不適切。'
   },
   {
     id: 47,
     dialog: [
       {s:'友人A', t:'このケーキ、<ruby>一口<rt>ひとくち</rt></ruby>【BLANK】か。'},
-      {s:'友人B', t:'いいよ、食べてみて。すごく美味しいよ。'},
+      {s:'友人B', t:'いいよ、食べてみて。すごく<ruby>美味<rt>おい</rt></ruby>しいよ。'},
       {s:'友人A', t:'ありがとう！<ruby>本当<rt>ほんとう</rt></ruby>だ、<ruby>甘<rt>あま</rt></ruby>すぎなくていいね。'}
     ],
     opts: ['食べてもいいですか','食べてもいい','食べさせてくれる','食べてもかまわない'],
     ans: 1,
-    feedback: '友人同士のカジュアルな<ruby>会話<rt>かいわ</rt></ruby>なので「食べてもいい？」（疑問形省略）が<ruby>最<rt>もっと</rt></ruby>自然。「食べてもいいですか」は丁寧すぎ、「食べてもかまわない」は相手が言う表現。'
+    feedback: '友人同士のカジュアルな会話なので「食べてもいい？」（疑問形省略）が最自然。「食べてもいいですか」は丁寧すぎ、「食べてもかまわない」は相手が言う表現。'
   },
   {
     id: 48,
@@ -1001,15 +1001,15 @@ const QUESTIONS = [
       {s:'社員', t:'はい、<ruby>昨日<rt>きのう</rt></ruby>【BLANK】。'},
       {s:'課長', t:'では、<ruby>修正<rt>しゅうせい</rt></ruby><ruby>箇所<rt>かしょ</rt></ruby>を教えてください。'}
     ],
-    opts: ['読みました','お読みになりました','拝読(はいどく)いたしました','拝見されました'],
+    opts: ['読みました','お<ruby>読<rt>よ</rt></ruby>みになりました','<ruby>拝読<rt>はいどく</rt></ruby>いたしました','<ruby>拝見<rt>はいけん</rt></ruby>されました'],
     ans: 2,
-    feedback: '社員が自<ruby>分<rt>ぶん</rt></ruby>の行為（読んだこと）を<ruby>課長<rt>かちょう</rt></ruby>に伝えるので謙譲語が<ruby>必要<rt>ひつよう</rt></ruby>。「<ruby>拝読<rt>はいどく</rt></ruby>いたしました」が<ruby>最<rt>もっと</rt></ruby>も丁寧で正解。「お読みになる」は尊敬語（<ruby>課長<rt>かちょう</rt></ruby>が読む場合）。「拝見される」は誤った表現です。'
+    feedback: '社員が自分の行為（読んだこと）を<ruby>課長<rt>かちょう</rt></ruby>に伝えるので謙譲語が必要。「<ruby>拝読<rt>はいどく</rt></ruby>いたしました」が最も丁寧で正解。「お読みになる」は尊敬語（<ruby>課長<rt>かちょう</rt></ruby>が読む場合）。「拝見される」は誤った表現です。'
   },
   {
     id: 49,
     dialog: [
-      {s:'夫', t:'<ruby>最<rt>もっと</rt></ruby>近、<ruby>太<rt>ふと</rt></ruby>っちゃったなあ。'},
-      {s:'<ruby>妻<rt>つま</rt></ruby>', t:'夜遅くに<ruby>甘<rt>あま</rt></ruby>いものを【BLANK】ほうがいいわよ。'},
+      {s:'夫', t:'<ruby>最近<rt>さいきん</rt></ruby>、<ruby>太<rt>ふと</rt></ruby>っちゃったなあ。'},
+      {s:'<ruby>妻<rt>つま</rt></ruby>', t:'<ruby>夜<rt>よる</rt></ruby><ruby>遅<rt>おそ</rt></ruby>くに<ruby>甘<rt>あま</rt></ruby>いものを【BLANK】ほうがいいわよ。'},
       {s:'夫', t:'わかってるんだけど、つい食べちゃうんだよね。'}
     ],
     opts: ['食べた','食べない','食べなかった','食べること'],
@@ -1019,13 +1019,13 @@ const QUESTIONS = [
   {
     id: 50,
     dialog: [
-      {s:'学生', t:'<ruby>先生<rt>せんせい</rt></ruby>、<ruby>来週<rt>らいしゅう</rt></ruby>の<ruby>月曜日<rt>げつようび</rt></ruby>に<ruby>伺<rt>うかが</rt></ruby>ってもよろしいでしょうか。'},
-      {s:'<ruby>先生<rt>せんせい</rt></ruby>', t:'<ruby>月曜日<rt>げつようび</rt></ruby>は<ruby>一日中<rt>いちにちじゅう</rt></ruby><ruby>会議<rt>かいぎ</rt></ruby>なんだ。<ruby>火曜日<rt>かようび</rt></ruby>なら【BLANK】よ。'},
-      {s:'学生', t:'では、<ruby>火曜日<rt>かようび</rt></ruby>の<ruby>午後<rt>ごご</rt></ruby>に伺います。'}
+      {s:'学生', t:'先生、<ruby>来週<rt>らいしゅう</rt></ruby>の<ruby>月曜日<rt>げつようび</rt></ruby>に<ruby>伺<rt>うかが</rt></ruby>ってもよろしいでしょうか。'},
+      {s:'先生', t:'<ruby>月曜日<rt>げつようび</rt></ruby>は<ruby>一日中<rt>いちにちじゅう</rt></ruby><ruby>会議<rt>かいぎ</rt></ruby>なんだ。<ruby>火曜日<rt>かようび</rt></ruby>なら【BLANK】よ。'},
+      {s:'学生', t:'では、<ruby>火曜日<rt>かようび</rt></ruby>の午後に<ruby>伺<rt>うかが</rt></ruby>います。'}
     ],
-    opts: ['かまいません','いらっしゃいません','伺いません','まいりません'],
+    opts: ['かまいません','いらっしゃいません','<ruby>伺<rt>うかが</rt></ruby>いません','まいりません'],
     ans: 0,
-    feedback: '「<ruby>火曜日<rt>かようび</rt></ruby>なら大丈夫」という意味なので「かまいません（<ruby>問題<rt>もんだい</rt></ruby>ありません）」が正解。「いらっしゃいません」などは否定の意味になり文脈に合いません。'
+    feedback: '「<ruby>火曜日<rt>かようび</rt></ruby>なら大丈夫」という意味なので「かまいません（問題ありません）」が正解。「いらっしゃいません」などは否定の意味になり文脈に合いません。'
   }
 ];
 
@@ -1139,7 +1139,7 @@ function submitAll() {
   const tgl  = document.getElementById('tanggal').value || '—';
   const pct  = Math.round(score/50*100);
   document.getElementById('print-banner').innerHTML =
-    `<strong>Hasil: ${score} / 50 (${pct}%)</strong> &nbsp;|&nbsp; <ruby>名前<rt>なまえ</rt></ruby>: ${nama} &nbsp;|&nbsp; 日付: ${tgl}`;
+    `<strong>Hasil: ${score} / 50 (${pct}%)</strong> &nbsp;|&nbsp; 名前: ${nama} &nbsp;|&nbsp; 日付: ${tgl}`;
 }
 
 // ─── SHOW SCORE MODAL ─────────────────────────────────────────────────────────
@@ -1154,7 +1154,7 @@ function showScore(score) {
   if (pct >= 90)      { grade = '優秀 · Sangat Baik ⭐⭐⭐'; color='#15803d'; bg='#f0fdf4'; }
   else if (pct >= 75) { grade = '良好 · Baik ⭐⭐';           color='#1d4ed8'; bg='#eff6ff'; }
   else if (pct >= 60) { grade = '合格 · Cukup ⭐';             color='#b45309'; bg='#fffbeb'; }
-  else                { grade = 'もっと<ruby>練習<rt>れんしゅう</rt></ruby>しましょう！';        color='#b91c1c'; bg='#fef2f2'; }
+  else                { grade = 'もっと練習しましょう！';        color='#b91c1c'; bg='#fef2f2'; }
 
   pctEl.textContent = `${pct}%`;
   pctEl.style.cssText = `color:${color};background:${bg};border:1px solid ${color}40;`;
