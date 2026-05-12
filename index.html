@@ -893,7 +893,7 @@ const QUESTIONS = [
     ],
     opts: ['お<ruby>話<rt>はなし</rt></ruby>ししています','お<ruby>話<rt>はなし</rt></ruby>しになっています','お<ruby>話<rt>はなし</rt></ruby>しされています','お<ruby>話<rt>はなし</rt></ruby>しいたしています'],
     ans: 1,
-    feedback: '社長（目上）の動作を描写するので尊敬語が必要。「お<ruby>話<rt>はなし</rt></ruby>しになっています」が正解。「お<ruby>話<rt>はなし</rt></ruby>しされています」は二重敬語になります。「お話しいたす」は謙譲語です。'
+    feedback: 'Karena mendeskripsikan tindakan Direktur (atasan), harus menggunakan sonkeigo (bentuk hormat).「お話しになっています（sedang berbicara）」adalah jawaban yang benar.「お話しされています」adalah bentuk keigo ganda (二重敬語) yang tidak tepat.「お話しいたす」adalah kenjōgo yang dipakai untuk tindakan diri sendiri, bukan atasan.'
   },
   {
     id: 39,
@@ -904,7 +904,7 @@ const QUESTIONS = [
     ],
     opts: ['<ruby>撮<rt>と</rt></ruby>ってもいいです','<ruby>撮<rt>と</rt></ruby>らせていただいてもよろしいです','<ruby>撮<rt>と</rt></ruby>らなければなりません','<ruby>撮<rt>と</rt></ruby>ってもかまいません'],
     ans: 1,
-    feedback: '客が店員に撮影の許可を丁寧に求めているので「<ruby>撮<rt>と</rt></ruby>らせていただいてもよろしいですか」が正解。「いただく」は謙譲語で適切な敬語表現です。'
+    feedback: 'Pelanggan meminta izin kepada pelayan toko untuk mengambil foto secara sopan, sehingga「撮らせていただいてもよろしいですか（boleh saya mengambil foto?）」adalah yang benar.「〜させていただく」adalah kenjōgo yang sangat sopan untuk meminta izin melakukan sesuatu. Opsi lain tidak berbentuk permintaan izin yang tepat atau justru terkesan mewajibkan.'
   },
   {
     id: 40,
@@ -915,7 +915,7 @@ const QUESTIONS = [
     ],
     opts: ['切った','切らない','切る','切って'],
     ans: 0,
-    feedback: '「〜ほうがいい」の前は動詞のた形（過去形）が来ます。「切ったほうがいいよ」が正解。「切らないほうがいい」は否定の勧め（しない方がよい）で意味が逆です。'
+    feedback: 'Pola「〜ほうがいい」harus didahului oleh bentuk lampau (た形) dari kata kerja. Jawaban「切ったほうがいいよ（sebaiknya matikan）」adalah yang benar.「切らないほうがいい」berarti saran untuk tidak mematikan—artinya justru terbalik dari konteks.'
   },
   {
     id: 41,
@@ -926,7 +926,7 @@ const QUESTIONS = [
     ],
     opts: ['お<ruby>持<rt>も</rt></ruby>ちしましょう','お<ruby>持<rt>も</rt></ruby>ちになります','<ruby>持<rt>も</rt></ruby>ってください','お<ruby>持<rt>も</rt></ruby>ちください'],
     ans: 0,
-    feedback: '社員が<ruby>部長<rt>ぶちょう</rt></ruby>の荷物を「持つ」申し出をするので、謙譲語「お持ちする」が正解。「お持ちになる」は尊敬語（相手が持つ場合）。「お<ruby>持<rt>も</rt></ruby>ちください」は相手への依頼です。'
+    feedback: 'Karyawan menawarkan diri untuk membawakan barang bawaan atasan (部長), sehingga harus menggunakan kenjōgo untuk tindakan diri sendiri.「お持ちしましょうか（boleh saya bawakan?）」adalah jawaban yang benar.「お持ちになる」adalah sonkeigo—dipakai saat atasannya yang membawa. 「お持ちください」adalah kalimat permintaan kepada lawan bicara, bukan penawaran diri.'
   },
   {
     id: 42,
@@ -937,7 +937,7 @@ const QUESTIONS = [
     ],
     opts: ['入った','入らない','入る','入って'],
     ans: 0,
-    feedback: '「〜ほうがいい」の前は動詞のた形（過去形）が来ます。「入ったほうがいいよ」が正解。友人同士なのでカジュアルな表現が自然です。'
+    feedback: 'Pola「〜ほうがいい」harus didahului oleh bentuk lampau (た形) dari kata kerja. Jawaban「入ったほうがいいよ（sebaiknya masuk ke payungku）」adalah yang benar. Karena percakapan antara teman, ekspresi kasual seperti ini sangat natural.'
   },
   {
     id: 43,
@@ -948,7 +948,7 @@ const QUESTIONS = [
     ],
     opts: ['入ってもいいです','入らせていただいてもよろしいです','お入りになってもいいです','入ってもよろしいです'],
     ans: 1,
-    feedback: '学生が先生に研究室へ入る許可を丁寧に求めているので「入らせていただいてもよろしいですか」が正解。「お入りになる」は尊敬語（先生が入る場合）で不適切。'
+    feedback: 'Mahasiswa meminta izin kepada dosen untuk masuk ke ruang penelitian secara sangat sopan.「入らせていただいてもよろしいですか（boleh saya masuk?）」adalah jawaban yang benar—「〜させていただく」adalah kenjōgo yang menunjukkan kerendahan hati saat meminta izin.「お入りになる」adalah sonkeigo yang dipakai saat dosennya yang masuk, bukan diri sendiri.'
   },
   {
     id: 44,
@@ -959,7 +959,7 @@ const QUESTIONS = [
     ],
     opts: ['<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>ります','お<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>りになります','<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>らせていただきます','<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>ってください'],
     ans: 0,
-    feedback: '客が自分のことを言うので通常形「<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>ります」が最も自然。「お持ち<ruby>帰<rt>かえ</rt></ruby>りになります」は尊敬語で自分には使いません。「<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>らせていただきます」は少し過剰ですが文法的には可。'
+    feedback: 'Pelanggan berbicara tentang dirinya sendiri (akan dibawa pulang), sehingga bentuk biasa「持ち帰ります（saya bawa pulang）」adalah yang paling natural.「お持ち帰りになります」adalah sonkeigo—tidak boleh dipakai untuk tindakan diri sendiri.「持ち帰らせていただきます」secara grammar bisa diterima tapi terasa berlebihan untuk konteks ini.'
   },
   {
     id: 45,
@@ -970,7 +970,7 @@ const QUESTIONS = [
     ],
     opts: ['やった','やらない','やる','やって'],
     ans: 0,
-    feedback: '「〜ほうがいい」の前は動詞のた形（過去形）が来ます。「やったほうがいいわよ」が正解。親が子に勧めている日常的な会話です。'
+    feedback: 'Pola「〜ほうがいい」harus didahului oleh bentuk lampau (た形) dari kata kerja. Jawaban「やったほうがいいわよ（sebaiknya kerjakan dulu）」adalah yang benar. Ini adalah percakapan sehari-hari seorang ibu yang memberi saran kepada anaknya.'
   },
   {
     id: 46,
@@ -981,7 +981,7 @@ const QUESTIONS = [
     ],
     opts: ['まいりました','お<ruby>見<rt>み</rt></ruby>えになりました','<ruby>伺<rt>うかが</rt></ruby>いました','<ruby>拝見<rt>はいけん</rt></ruby>しました'],
     ans: 1,
-    feedback: 'お客様（外部の人）が来たことを社長に伝えるので、お客様に対する尊敬語「お見えになる」が正解。「まいる」は謙譲語（自分が行く場合）。「伺う」も謙譲語で不適切。'
+    feedback: 'Sekretaris menyampaikan kepada Direktur bahwa tamu (pihak luar) sudah datang, sehingga harus menggunakan sonkeigo untuk menghormati tamu tersebut.「お見えになりました（sudah tiba / sudah hadir）」adalah jawaban yang benar.「まいる」adalah kenjōgo untuk tindakan diri sendiri saat pergi.「伺う」juga kenjōgo—keduanya tidak tepat untuk mendeskripsikan tindakan tamu.'
   },
   {
     id: 47,
@@ -992,7 +992,7 @@ const QUESTIONS = [
     ],
     opts: ['食べてもいいですか','食べてもいい','食べさせてくれる','食べてもかまわない'],
     ans: 1,
-    feedback: '友人同士のカジュアルな会話なので「食べてもいい？」（疑問形省略）が最自然。「食べてもいいですか」は丁寧すぎ、「食べてもかまわない」は相手が言う表現。'
+    feedback: 'Karena percakapan antara teman yang santai,「食べてもいい？」（bentuk tanya informal tanpa か）adalah yang paling natural. Jawaban B「食べてもいい」sudah menjadi kalimat tanya karena ada「か」di luar blank.「食べてもいいですか」terdengar terlalu formal untuk teman.「食べてもかまわない」biasanya diucapkan oleh pihak yang memberi izin, bukan yang meminta.'
   },
   {
     id: 48,
@@ -1003,7 +1003,7 @@ const QUESTIONS = [
     ],
     opts: ['読みました','お<ruby>読<rt>よ</rt></ruby>みになりました','<ruby>拝読<rt>はいどく</rt></ruby>いたしました','<ruby>拝見<rt>はいけん</rt></ruby>されました'],
     ans: 2,
-    feedback: '社員が自分の行為（読んだこと）を<ruby>課長<rt>かちょう</rt></ruby>に伝えるので謙譲語が必要。「<ruby>拝読<rt>はいどく</rt></ruby>いたしました」が最も丁寧で正解。「お読みになる」は尊敬語（<ruby>課長<rt>かちょう</rt></ruby>が読む場合）。「拝見される」は誤った表現です。'
+    feedback: 'Karyawan menyampaikan kepada atasan (課長) bahwa dirinya sudah membaca dokumen tersebut, sehingga harus menggunakan kenjōgo untuk tindakan diri sendiri.「拝読いたしました（sudah saya baca dengan hormat）」adalah yang paling sopan dan tepat.「お読みになる」adalah sonkeigo—dipakai saat 課長-nya yang membaca.「拝見される」adalah bentuk yang salah secara grammar.'
   },
   {
     id: 49,
@@ -1014,7 +1014,7 @@ const QUESTIONS = [
     ],
     opts: ['食べた','食べない','食べなかった','食べること'],
     ans: 1,
-    feedback: '「〜ないほうがいい」で食べないことを勧めています。否定の「〜ないほうがいい」の場合、動詞は「ない形（否定形）」のまま使います。「食べないほうがいい」が正解。'
+    feedback: 'Istri menyarankan suami untuk tidak makan yang manis-manis di malam hari. Pola「〜ないほうがいい」digunakan untuk saran negatif, dan kata kerjanya tetap dalam bentuk「ない形（negatif）」tanpa perubahan.「食べないほうがいい（sebaiknya tidak makan）」adalah jawaban yang benar.'
   },
   {
     id: 50,
@@ -1025,7 +1025,7 @@ const QUESTIONS = [
     ],
     opts: ['かまいません','いらっしゃいません','<ruby>伺<rt>うかが</rt></ruby>いません','まいりません'],
     ans: 0,
-    feedback: '「<ruby>火曜日<rt>かようび</rt></ruby>なら大丈夫」という意味なので「かまいません（問題ありません）」が正解。「いらっしゃいません」などは否定の意味になり文脈に合いません。'
+    feedback: 'Guru mengatakan「火曜日なら大丈夫（kalau Selasa tidak masalah）」, sehingga jawaban yang tepat adalah「かまいません（tidak masalah / silakan）」. Pilihan lain seperti「いらっしゃいません」semuanya bermakna negatif/penolakan, yang bertentangan dengan konteks guru yang mempersilakan.'
   }
 ];
 
